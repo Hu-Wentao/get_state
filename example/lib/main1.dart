@@ -5,7 +5,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:get_state/getstate.dart';
+import 'package:get_state/get_state.dart';
 
 ///
 /// 示例1:

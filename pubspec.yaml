@@ -1,6 +1,8 @@
 name: get_state
 description: state management package based on dependency injection, use the MVVM pattern.(rename from ca_presentation)
 version: 3.0.0
+auth: Hu Wenatao <hu.wentao@outlook.com>
+homepage: https://github.com/Hu-Wentao
 repository: https://github.com/Hu-Wentao/get_state
 
 
@@ -10,6 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   get_it: ^4.0.2
 
 dev_dependencies:

@@ -2,64 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/get_state_example/lib/main0.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get_state_example/lib/main1.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get_state_example/lib/main2.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get_state_example/lib/main3.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get_state_example/lib/main4.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get_state_example/lib/main4.iconfig.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/test/view_model_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/kotlin/com/example/ca_presentation_example/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/android/app/src/main/kotlin/com/example/ca_presentation_example/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Flutter/Debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Flutter/Release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/AppDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/lib/counter_view_model.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/lib/di_config.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/lib/di_config.iconfig.dart" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/lib/main3.iconfig.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/test/view_model_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/test/view_model_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_state_example/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/get_state_example/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/kotlin/com/example/get_state_example/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main0.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main0.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main3.iconfig.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main3.iconfig.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main4.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/main4.iconfig.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main4.iconfig.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/lib/register_moduls.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/register_moduls.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/test/view_model_test.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_state_example/web/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/getstate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/getstate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/getstate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getstate.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/abs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/abs.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/impl.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getstate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/get_state.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -72,16 +51,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="get_state" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/abs.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="109" column="15" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
+            <state relative-caret-position="32">
+              <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
               <folding>
                 <element signature="e#0#2693#0" expanded="true" />
                 <element signature="e#95#133#0" expanded="true" />
@@ -91,42 +74,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/dev/flutter/packages/flutter/lib/src/widgets/framework.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="1251" column="60" selection-start-line="1251" selection-start-column="53" selection-end-line="1251" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/getstate_test.dart">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get_state_example/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get_state_example/lib/main1.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
-              <folding>
-                <element signature="e#0#1939#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get_state_example/lib/register_moduls.dart">
+        <entry file="file://$PROJECT_DIR$/example/lib/register_moduls.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
               <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
@@ -139,24 +87,108 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get_state_example/test/view_model_test.dart">
+        <entry file="file://$PROJECT_DIR$/example/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="357">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/lib/main1.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="515">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
               <folding>
-                <element signature="e#0#1657#0" expanded="true" />
-                <element signature="e#96#161#0" expanded="true" />
+                <element signature="e#0#1939#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="84">
+                <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/test/view_model_test.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
+              <folding>
+                <element signature="e#0#1591#0" expanded="true" />
+                <element signature="e#95#143#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/getstate.dart">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/example/lib/main3.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#3098#0" expanded="true" />
+                <element signature="e#96#138#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/lib/main4.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#2173#0" expanded="true" />
+                <element signature="e#96#135#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/lib/main2.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#2319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -182,13 +214,18 @@
         <option value="$PROJECT_DIR$/get_state_example/lib/main.dart" />
         <option value="$PROJECT_DIR$/get_state_example/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/get_state_example/test/view_model_test.dart" />
         <option value="$PROJECT_DIR$/lib/getstate.dart" />
         <option value="$PROJECT_DIR$/lib/src/impl.dart" />
         <option value="$PROJECT_DIR$/get_state_example/lib/counter_view_model.dart" />
         <option value="$PROJECT_DIR$/get_state_example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/src/abs.dart" />
+        <option value="$PROJECT_DIR$/example/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/example/test/view_model_test.dart" />
+        <option value="$PROJECT_DIR$/example/lib/main3.dart" />
+        <option value="$PROJECT_DIR$/example/lib/main4.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
       </list>
     </option>
   </component>
@@ -211,6 +248,17 @@
             <path>
               <item name="get_state" type="b2602c69:ProjectViewProjectNode" />
               <item name="get_state" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="get_state" type="b2602c69:ProjectViewProjectNode" />
+              <item name="get_state" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="get_state" type="b2602c69:ProjectViewProjectNode" />
+              <item name="get_state" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="get_state" type="b2602c69:ProjectViewProjectNode" />
@@ -244,6 +292,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\proj_flutter\get_state\example\lib" />
+      <recent name="D:\proj_flutter\get_state" />
       <recent name="D:\proj_flutter\get_state\lib\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -286,13 +336,14 @@
       <window_info id="Capture Tool" />
       <window_info id="Resources Explorer" />
       <window_info id="Favorites" side_tool="true" weight="0.3299595" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25438598" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25438598" />
       <window_info anchor="bottom" id="Flr" />
       <window_info anchor="bottom" id="Dart Analysis" weight="0.3294964" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.3299712" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="RESTMan" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Find" weight="0.3299712" />
+      <window_info anchor="bottom" id="Terminal" weight="0.92939484" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.3294964" />
       <window_info anchor="bottom" id="Messages" weight="0.32853025" />
       <window_info anchor="right" id="Word Book" side_tool="true" />
@@ -306,6 +357,32 @@
       <window_info anchor="right" id="Key Promoter X" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/src/ca_presentation.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -317,18 +394,6 @@
     <entry file="file://$PROJECT_DIR$/get_state_example/ios/Runner/Base.lproj/Main.storyboard">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_state_example/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="336">
-            <caret line="16" selection-start-line="16" selection-end-line="16" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -338,13 +403,6 @@
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -369,7 +427,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/getstate.dart">
+    <entry file="file://$PROJECT_DIR$/lib/get_state.dart">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/impl.dart">
@@ -382,27 +440,6 @@
     <entry file="file://$PROJECT_DIR$/test/getstate_test.dart">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_state_example/lib/register_moduls.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#1692#0" expanded="true" />
-            <element signature="e#97#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_state_example/lib/main1.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#0#1939#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/get_state_example/lib/counter_view_model.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -410,13 +447,6 @@
           <folding>
             <element signature="e#1#42#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_state_example/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -429,12 +459,134 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/abs.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="109" column="15" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
+        <state relative-caret-position="32">
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
           <folding>
             <element signature="e#0#2693#0" expanded="true" />
             <element signature="e#95#133#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main1.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#0#1939#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main2.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#2319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_state_example/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="336">
+            <caret line="16" selection-start-line="16" selection-end-line="16" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_state_example/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="3" column="40" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/register_moduls.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#1692#0" expanded="true" />
+            <element signature="e#97#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/widget_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#1056#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/test/view_model_test.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#0#1591#0" expanded="true" />
+            <element signature="e#95#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main3.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#3098#0" expanded="true" />
+            <element signature="e#96#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main4.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#2173#0" expanded="true" />
+            <element signature="e#96#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="84">
+            <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
