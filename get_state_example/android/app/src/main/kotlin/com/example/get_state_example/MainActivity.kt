@@ -1,4 +1,4 @@
-package com.example.ca_presentation_example
+package com.example.get_state_example
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

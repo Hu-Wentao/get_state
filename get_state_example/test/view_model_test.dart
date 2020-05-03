@@ -2,23 +2,22 @@
 // Email : hu.wentao@outlook.com
 // Date  : 2020/3/15
 // Time  : 23:54
-import 'package:ca_presentation_example/counter_view_model.dart';
-import 'package:ca_presentation_example/di_config.dart';
-import 'package:ca_presentation_example/main.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get_state_example/main0.dart';
+import 'package:get_state_example/main3.dart';
 
 main() async {
   setUpAll(() async {
-    await setUpDi();
+    await configDi();
   });
 
   test('测试 CounterViewModel', () async {
-    var start = sl<CounterViewModel>().counter;
+    var start = g<MyCounterViewModel>().counter;
     print('开始: $start');
 
-    sl<CounterViewModel>().incrementCounter();
+    g<MyCounterViewModel >().incrementCounter();
 
-    var end = sl<CounterViewModel>().counter;
+    var end = g<MyCounterViewModel >().counter;
     print('结束: $end');
 
     expect(start, 1);
@@ -26,14 +25,14 @@ main() async {
   });
 
   test('\n测试 Counter2ViewModel', () async {
-    var start = sl<Counter2ViewModel>().counter;
+    var start = g<MyCounterViewModel >().counter;
     print('开始: $start');
 
     // 如果要确保点击有效, 则需要isReady<T>();或者 allReady();
-    await sl.isReady<Counter2ViewModel>();
-    sl<Counter2ViewModel>().incrementCounter();
+    await g.isReady<MyCounterViewModel >();
+    g<MyCounterViewModel >().incrementCounter();
 
-    var end = sl<Counter2ViewModel>().counter;
+    var end = g<MyCounterViewModel >().counter;
     print('结束: $end');
 
     expect(start, 2);
@@ -41,12 +40,12 @@ main() async {
   });
 
   test('\n测试 Counter3ViewModel', () async {
-    var start = sl<Counter3ViewModel>().counter;
+    var start = g<MyCounterViewModel >().counter;
     print('开始: $start');
 
-    sl<Counter3ViewModel>().incrementCounter();
+    g<MyCounterViewModel >().incrementCounter();
 
-    var end = sl<Counter3ViewModel>().counter;
+    var end = g<MyCounterViewModel >().counter;
     print('结束: $end');
 
     expect(start, 3);
@@ -54,12 +53,12 @@ main() async {
   });
 
   test('\n测试 Counter4ViewModel', () async {
-    var start = sl<Counter4ViewModel>().counter;
+    var start = g<MyCounterViewModel >().counter;
     print('开始: $start');
 
-    sl<Counter4ViewModel>().incrementCounter();
+    g<MyCounterViewModel >().incrementCounter();
 
-    var end = sl<Counter4ViewModel>().counter;
+    var end = g<MyCounterViewModel >().counter;
     print('结束: $end');
 
     expect(start, 4);

@@ -1,7 +1,8 @@
 name: get_state
-description: state management package (based on dependency injection)
+description: state management package based on dependency injection, use the MVVM pattern.(rename from ca_presentation)
 version: 3.0.0
-author: 
+repository: https://github.com/Hu-Wentao/get_state
+
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

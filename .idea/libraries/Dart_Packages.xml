@@ -75,14 +75,14 @@
         <entry key="build_runner">
           <value>
             <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner-1.8.0/lib" />
+              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner-1.9.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="build_runner_core">
           <value>
             <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner_core-4.5.2/lib" />
+              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner_core-5.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -156,6 +156,13 @@
             </list>
           </value>
         </entry>
+        <entry key="equatable">
+          <value>
+            <list>
+              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/equatable-1.1.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="fixnum">
           <value>
             <list>
@@ -181,7 +188,6 @@
           <value>
             <list>
               <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_it-4.0.2/lib" />
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_it-4.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -244,7 +250,7 @@
         <entry key="injectable_generator">
           <value>
             <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/injectable_generator-0.3.3/lib" />
+              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/injectable_generator-0.3.5/lib" />
             </list>
           </value>
         </entry>
@@ -513,8 +519,8 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_config-0.4.2/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_daemon-2.1.3/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_resolvers-1.3.3/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner-1.8.0/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner_core-4.5.2/lib" />
+      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner-1.9.0/lib" />
+      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/build_runner_core-5.1.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/built_collection-4.3.2/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/built_value-7.0.9/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/charcode-1.1.2/lib" />
@@ -525,8 +531,8 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/crypto-2.1.3/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/csslib-0.16.1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/dart_style-1.3.3/lib" />
+      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/equatable-1.1.1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/fixnum-0.10.11/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_it-4.0.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_it-4.0.2/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/glob-1.2.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/graphs-0.2.0/lib" />
@@ -536,7 +542,7 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/http_parser-3.1.3/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/image-2.1.4/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/injectable-0.3.0/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/injectable_generator-0.3.3/lib" />
+      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/injectable_generator-0.3.5/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/io-0.3.3/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.1+1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/json_annotation-3.0.1/lib" />

@@ -1,3 +1,3 @@
 library getstate;
 
-export 'package:getstate/src/abs.dart';
+export 'package:get_state/src/abs.dart';
