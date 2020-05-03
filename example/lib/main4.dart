@@ -5,19 +5,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get_it/get_it.dart';
 import 'package:get_state/get_state.dart';
-import 'package:injectable/injectable.dart';
 
-import 'main3.iconfig.dart';
+import 'main3.dart';
 
 ///
-/// 示例3:
-/// 使用injectable, 单View, 自定义Model, 页面级注册
+/// 示例4: 页面级注册
+///   使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
-
-GetIt _g = GetIt.instance;
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -25,12 +21,6 @@ Future<void> main() async {
   // 5. 添加依赖注入
   configDi();
   runApp(MaterialApp(home: MyApp()));
-}
-
-// 4. 添加注解
-@injectableInit
-Future<void> configDi() async {
-  await $initGetIt(_g);
 }
 
 class MyApp extends StatelessWidget {
@@ -60,7 +50,7 @@ class _Page2State extends State<Page2> {
   @override
   void initState() {
     /// 4. 手动注册 VM
-    _g.registerLazySingleton<Pg2Vm>(() => Pg2Vm());
+    g.registerLazySingleton<Pg2Vm>(() => Pg2Vm());
     super.initState();
   }
 
@@ -92,7 +82,7 @@ class FooView extends View<Pg2Vm> {
 /// 注意, 本ViewModel不使用注解进行全局注册,
 /// 而是在Page的 initView中手动注册
 class Pg2Vm extends ViewModel<int> {
-  Pg2Vm() : super(initModel: 666);
+  Pg2Vm() : super(initModel: 4);
 
   int get val => model;
 

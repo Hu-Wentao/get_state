@@ -3,7 +3,6 @@
 // Date  : 2020/5/3
 // Time  : 10:03
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get_state_example/main0.dart';
 import 'package:get_state_example/main3.dart';
 
 main() async {

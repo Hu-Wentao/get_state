@@ -104,24 +104,21 @@ enum VmState {
 /// [M] :Model
 /// 建议 M extends Equatable
 abstract class ViewModel<M> extends ChangeNotifier {
-  VmState _vmState;
+  VmState vmState;
   M model;
 
-  ViewModel({M initModel, VmState state: VmState.unInit}) {
-    vmInit(initModel);
+  ViewModel({M initModel, VmState state: VmState.idle}) {
+    vmOnInit(initModel);
   }
 
   /// VM是否处于锁定状态
-  bool get vmIsBusy => _vmState != VmState.idle;
+  bool get vmIsBusy => vmState != VmState.idle;
 
   /// 初始化ViewModel中的Model
+  /// [initModel]的值从构造方法中传入
   /// 可以覆写本方法, 在本方法内为 [model]赋值
   @protected
-  void vmInit(M initModel) {
-    if (initModel == null) return;
-    model = initModel;
-    vmSetIdle;
-  }
+  vmOnInit(M initModel) => model = initModel;
 
   /// 刷新状态
   /// 可以覆写本方法, 达到控制刷新粒度的目的
@@ -151,13 +148,13 @@ abstract class ViewModel<M> extends ChangeNotifier {
   }
 
   /// 设置VM状态为 [VmState.busy]
-  get vmSetBusy => _vmState = VmState.busy;
+  get vmSetBusy => vmState = VmState.busy;
 
   /// 设置VM状态为 [VmState.idle]
-  get vmSetIdle => _vmState = VmState.idle;
+  get vmSetIdle => vmState = VmState.idle;
 
   @protected
-  void vmDispose(){
+  void vmDispose() {
     model = null;
   }
 }

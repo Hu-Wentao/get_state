@@ -25,7 +25,7 @@ import 'main3.iconfig.dart';
 ///   flutter pub run build_runner watch --delete-conflicting-outputs
 ///   启动代码生成工具, 自动生成 "${本文件名}.iconfig.dart"文件
 
-GetIt _g = GetIt.instance;
+GetIt g = GetIt.instance;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +37,7 @@ Future<void> main() async {
 // 4. 添加注解
 @injectableInit
 Future<void> configDi() async {
-  await $initGetIt(_g);
+  await $initGetIt(g);
 }
 
 class MyApp extends StatelessWidget {
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
           ),
           RaisedButton(
             child: Text('点击更改另一个页面的值'),
-            onPressed: () => _g<Pg2Vm>().add,
+            onPressed: () => g<Pg2Vm>().add,
           ),
         ]),
       );
@@ -81,7 +81,7 @@ class MyCounterView extends View<MyCounterViewModel> {
 /// 2. ViewModel
 @lazySingleton
 class MyCounterViewModel extends ViewModel<CounterModel2> {
-  MyCounterViewModel() : super(initModel: CounterModel2(2, '- -'));
+  MyCounterViewModel() : super(initModel: CounterModel2(3, '- -'));
 
   int get counter => model.number;
 
@@ -124,7 +124,7 @@ class FooView extends View<Pg2Vm> {
 
 @lazySingleton
 class Pg2Vm extends ViewModel<int> {
-  Pg2Vm() : super(initModel: 666);
+  Pg2Vm() : super(initModel: 3);
 
   String get strVal => "$model";
 
