@@ -78,11 +78,11 @@ class MyCounterViewModel extends ViewModel<int> {
 //  MyCounterViewModel(int initModel) : super(initModel: initModel);
 
   // 2.2 获取Model方法
-  int get counter => model;
+  int get counter => m;
 
   // 2.3 操作Model方法,
   // 调用 父类中的vmRefresh()方法更新model的值
-  void incrementCounter() => vmRefresh(model+1);
+  void incrementCounter() => vmOnUpdate(m+1);
 }
 
 ///

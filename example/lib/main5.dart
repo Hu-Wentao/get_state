@@ -65,16 +65,16 @@ class MyCounterVm extends ViewModel<CounterM> {
   @override
   vmOnInit(CounterM initModel) async {
     await Future.delayed(Duration(seconds: 4));
-    model = initModel;
+    m = initModel;
     vmSetIdleAndNotify;
   }
 
-  int get counter => model?.number;
+  int get counter => m?.number;
 
-  String get str => model?.str;
+  String get str => m?.str;
 
   void incrementCounter() {
-    vmRefresh(CounterM(model.number + 1, '新的值'));
+    vmOnUpdate(CounterM(m.number + 1, '新的值'));
   }
 }
 

@@ -84,9 +84,9 @@ class FooView extends View<Pg2Vm> {
 class Pg2Vm extends ViewModel<int> {
   Pg2Vm() : super(initModel: 4);
 
-  int get val => model;
+  int get val => m;
 
-  get add => vmRefresh(val + 1);
+  get add => vmOnUpdate(val + 1);
 }
 
 /// 1. Model

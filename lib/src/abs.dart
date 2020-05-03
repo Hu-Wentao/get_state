@@ -105,9 +105,9 @@ enum VmState {
 /// 建议 M extends Equatable
 abstract class ViewModel<M> extends ChangeNotifier {
   VmState vmState;
-  M model;
+  M m;
 
-  ViewModel({M initModel, VmState state: VmState.idle}) {
+  ViewModel({M initModel, this.vmState: VmState.idle}) {
     vmOnInit(initModel);
   }
 
@@ -116,18 +116,18 @@ abstract class ViewModel<M> extends ChangeNotifier {
 
   /// 初始化ViewModel中的Model
   /// [initModel]的值从构造方法中传入
-  /// 可以覆写本方法, 在本方法内为 [model]赋值
+  /// 可以覆写本方法, 在本方法内为 [m]赋值
   @protected
-  vmOnInit(M initModel) => model = initModel;
+  vmOnInit(M initModel) => m = initModel;
 
   /// 刷新状态
   /// 可以覆写本方法, 达到控制刷新粒度的目的
   @protected
-  void vmRefresh(M newValue) {
+  vmOnUpdate(M newModel) {
     if (vmCheckAndSetBusy) return;
 
-    if (this.model != newValue) {
-      this.model = newValue;
+    if (this.m != newModel) {
+      this.m = newModel;
       vmSetIdleAndNotify;
     }
   }
@@ -155,6 +155,6 @@ abstract class ViewModel<M> extends ChangeNotifier {
 
   @protected
   void vmDispose() {
-    model = null;
+    m = null;
   }
 }

@@ -69,7 +69,7 @@ class MyCounterView extends View<MyCounterViewModel> {
   @override
   Widget build(BuildContext c, MyCounterViewModel vm) => ListTile(
         leading: Text('测试3: ${vm.counter}'),
-        title: Text('${vm.model.str}'),
+        title: Text('${vm.m.str}'),
         trailing: RaisedButton(
           child: Icon(Icons.add),
           onPressed: () => vm.incrementCounter(),
@@ -83,10 +83,10 @@ class MyCounterView extends View<MyCounterViewModel> {
 class MyCounterViewModel extends ViewModel<CounterModel2> {
   MyCounterViewModel() : super(initModel: CounterModel2(3, '- -'));
 
-  int get counter => model.number;
+  int get counter => m.number;
 
   void incrementCounter() {
-    vmRefresh(CounterModel2(model.number + 1, '新的值'));
+    vmOnUpdate(CounterModel2(m.number + 1, '新的值'));
   }
 }
 
@@ -126,7 +126,7 @@ class FooView extends View<Pg2Vm> {
 class Pg2Vm extends ViewModel<int> {
   Pg2Vm() : super(initModel: 3);
 
-  String get strVal => "$model";
+  String get strVal => "$m";
 
-  get add => vmRefresh(model + 1);
+  get add => vmOnUpdate(m + 1);
 }
