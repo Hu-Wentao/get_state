@@ -4,12 +4,14 @@
     <bookmark url="file://$PROJECT_DIR$/example/lib/main1.dart" line="72" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="feat(recorder): 新增&quot;状态记录&quot;功能, 允许在历史状态中切换">
+    <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/example/lib/main6.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/src/recorder.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main0.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main0.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main1.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main2.dart" afterDir="false" />
@@ -72,14 +74,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main3.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#96#138#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="168">
+                <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              </first_editor>
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -193,7 +209,6 @@
         <option value="$PROJECT_DIR$/get_state_example/lib/counter_view_model.dart" />
         <option value="$PROJECT_DIR$/get_state_example/pubspec.yaml" />
         <option value="$PROJECT_DIR$/example/test/view_model_test.dart" />
-        <option value="$PROJECT_DIR$/CHANGELOG.md" />
         <option value="$PROJECT_DIR$/example/lib/main5.dart" />
         <option value="$PROJECT_DIR$/lib/src/record.dart" />
         <option value="$PROJECT_DIR$/lib/get_state.dart" />
@@ -208,6 +223,7 @@
         <option value="$PROJECT_DIR$/example/lib/main2.dart" />
         <option value="$PROJECT_DIR$/example/lib/main4.dart" />
         <option value="$PROJECT_DIR$/example/lib/main3.dart" />
+        <option value="$PROJECT_DIR$/CHANGELOG.md" />
       </list>
     </option>
   </component>
@@ -345,14 +361,20 @@
       <option name="project" value="LOCAL" />
       <updated>1588517186530</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat(recorder): 新增&quot;状态记录&quot;功能, 允许在历史状态中切换&#10;doc: 添加对应的example">
+      <created>1590328943622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590328943622</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23481782" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23481782" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -369,7 +391,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.71366906" />
       <window_info anchor="bottom" id="Debug" order="8" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49932525" weight="0.38129497" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49932525" weight="0.3294964" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" sideWeight="0.49932525" visible="true" weight="0.3294964" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Flutter Inspector" order="1" weight="0.3299595" />
       <window_info anchor="right" id="Key Promoter X" order="2" weight="0.3299595" />
@@ -436,7 +458,8 @@
     <MESSAGE value="feat: 新增异步初始化ViewModel示例" />
     <MESSAGE value="fix: 修复初始化vmState无效的bug&#10;refactor: 重命名ViewModel中的model为m" />
     <MESSAGE value="feat(recorder): 新增&quot;状态记录&quot;功能, 允许在历史状态中切换" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(recorder): 新增&quot;状态记录&quot;功能, 允许在历史状态中切换" />
+    <MESSAGE value="feat(recorder): 新增&quot;状态记录&quot;功能, 允许在历史状态中切换&#10;doc: 添加对应的example" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(recorder): 新增&quot;状态记录&quot;功能, 允许在历史状态中切换&#10;doc: 添加对应的example" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/src/ca_presentation.dart" />
@@ -469,18 +492,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/get_state_example/README.md" />
     <entry file="file://$PROJECT_DIR$/get_state_example/pubspec.yaml" />
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="42">
-            <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/register_moduls.dart" />
     <entry file="file://D:/dev/flutter/bin/cache/pkg/sky_engine/lib/io/link.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -663,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -713,11 +717,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main3.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="107" column="11" lean-forward="true" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+        <state relative-caret-position="210">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#96#138#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="168">
+            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>
