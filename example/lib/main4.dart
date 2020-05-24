@@ -14,6 +14,8 @@ import 'main3.dart';
 ///   使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
+///  (4)处为本例重点, 如果怕写错代码, 可以先用injectable自动生成代码,
+///  然后再剪切到 (4)的位置. 注意, 不能复制, 因为重复注册会报错.
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -86,7 +88,7 @@ class Pg2Vm extends ViewModel<int> {
 
   int get val => m;
 
-  get add => vmOnUpdate(val + 1);
+  get add => vmUpdate(val + 1);
 }
 
 /// 1. Model

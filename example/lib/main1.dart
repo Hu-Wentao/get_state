@@ -15,20 +15,20 @@ import 'package:get_state/get_state.dart';
 ///   请自下而上查看本例源码
 ///   下例中的写法适用于数量较少,类型较简单的状态
 ///
-/// 1. 编写Model类
+/// 1. 编写 Model类
 ///   Model类就是供View展示的数据
 ///   本例使用int类型作为Model, 因此无需编写
 ///
-/// 2. 编写ViewModel类
+/// 2. 编写 ViewModel类
 ///   ViewModel负责业务逻辑和操作视图
-///   这里的操作Model的方法相当于BLoC中的Event
+///   这里的操作 Model的方法相当于 BLoC中的 Event
 ///
-/// 3. 编写View类
-///   View类负责视图展示, 尽量将所有的视图动作移动到ViewModel中
+/// 3. 编写 View类
+///   View类负责视图展示, 尽量将所有的视图动作移动到 ViewModel中
 ///
-/// 4. 将View放到Widget树中
+/// 4. 将 View放到 Widget树中
 ///
-/// 5. 在main方法中注册依赖,
+/// 5. 在 main方法中注册依赖,
 ///   使用 registerSingleton<T>()方法以懒单例的方式使用ViewModel
 ///   get_it 还有更多的注册方式, 这里暂时只介绍这一种
 
@@ -75,6 +75,7 @@ class MyCounterView extends View<MyCounterViewModel> {
 class MyCounterViewModel extends ViewModel<int> {
   // 2.1 在ViewModel的构造中, 提供默认的初始值
   MyCounterViewModel() : super(initModel: 1);
+
 //  MyCounterViewModel(int initModel) : super(initModel: initModel);
 
   // 2.2 获取Model方法
@@ -82,7 +83,7 @@ class MyCounterViewModel extends ViewModel<int> {
 
   // 2.3 操作Model方法,
   // 调用 父类中的vmRefresh()方法更新model的值
-  void incrementCounter() => vmOnUpdate(m+1);
+  void incrementCounter() => vmUpdate(m + 1);
 }
 
 ///

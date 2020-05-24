@@ -16,7 +16,7 @@ import 'main3.dart';
 /// 使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
-///   ViewModel构造中的 initModel即[vmOnInit]中的 initModel
+///   ViewModel构造中的 initModel即[vmInit]中的 initModel
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -28,7 +28,8 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) =>
+      Scaffold(
         appBar: AppBar(
           title: Text('演示:5.Vm异步初始化'),
         ),
@@ -44,29 +45,30 @@ class MyApp extends StatelessWidget {
 @lazySingleton
 class MyCounterV extends View<MyCounterVm> {
   @override
-  Widget build(BuildContext c, MyCounterVm vm) => vm.vmState == VmState.unInit
-      ? CircularProgressIndicator()
-      : ListTile(
-          leading: Text('测试5: ${vm.counter}'),
-          title: Text('${vm.str}'),
-          trailing: RaisedButton(
-            child: Icon(Icons.add),
-            onPressed: () => vm.incrementCounter(),
-          ),
-        );
+  Widget build(BuildContext c, MyCounterVm vm) =>
+      vm.vmState == VmState.unInit
+          ? CircularProgressIndicator()
+          : ListTile(
+        leading: Text('测试5: ${vm.counter}'),
+        title: Text('${vm.str}'),
+        trailing: RaisedButton(
+          child: Icon(Icons.add),
+          onPressed: () => vm.incrementCounter(),
+        ),
+      );
 }
 
 ///
 /// 2. ViewModel
 @lazySingleton
 class MyCounterVm extends ViewModel<CounterM> {
-  MyCounterVm() : super(initModel: CounterM(5, '- -'), state: VmState.unInit);
+  MyCounterVm() : super(initModel: CounterM(5, '- -'), vmState: VmState.unInit);
 
   @override
-  vmOnInit(CounterM initModel) async {
-    await Future.delayed(Duration(seconds: 4));
-    m = initModel;
-    vmSetIdleAndNotify;
+  vmInit(CounterM initModel) async {
+    initModel =
+    await Future.delayed(Duration(seconds: 4)).then((_) => CounterM(5, '异步加载'));
+    super.vmInit(initModel);
   }
 
   int get counter => m?.number;
@@ -74,7 +76,7 @@ class MyCounterVm extends ViewModel<CounterM> {
   String get str => m?.str;
 
   void incrementCounter() {
-    vmOnUpdate(CounterM(m.number + 1, '新的值'));
+    vmUpdate(CounterM(m.number + 1, '新的值'));
   }
 }
 

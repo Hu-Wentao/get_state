@@ -17,19 +17,19 @@ import 'main3.iconfig.dart';
 /// 使用injectable, 多View, 自定义Model, 跨页状态更改
 ///
 /// 要点提示:
-///   1.务必在(2)处为ViewModel添加注解, 这里使用@lazySingleton
+///   1.务必在(2)处为 ViewModel添加注解, 这里使用 @lazySingleton
 ///   适用于绝大多数情况
 ///
-///   2. 务必在(4)处添加 @injectableInit 注解, 让injectable识别初始化入口
-///   完成1到5的代码编写之后, 打开terminal, 输入
-///   flutter pub run build_runner watch --delete-conflicting-outputs
-///   启动代码生成工具, 自动生成 "${本文件名}.iconfig.dart"文件
+///   2. 务必在(4)处添加 @injectableInit注解, 让injectable识别初始化入口
+///   完成1到5的代码编写之后, 打开 terminal, 输入
+///   'flutter pub run build_runner watch --delete-conflicting-outputs'
+///   启动代码生成工具, 将会自动生成 "${本文件名}.iconfig.dart"文件
 
 GetIt g = GetIt.instance;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // 5. 添加依赖注入
+  // 5. 添加自动依赖注入
   configDi();
   runApp(MaterialApp(home: MyApp()));
 }
@@ -37,7 +37,7 @@ Future<void> main() async {
 // 4. 添加注解
 @injectableInit
 Future<void> configDi() async {
-  await $initGetIt(g);
+  $initGetIt(g);
 }
 
 class MyApp extends StatelessWidget {
@@ -86,7 +86,7 @@ class MyCounterViewModel extends ViewModel<CounterModel2> {
   int get counter => m.number;
 
   void incrementCounter() {
-    vmOnUpdate(CounterModel2(m.number + 1, '新的值'));
+    vmUpdate(CounterModel2(m.number + 1, '新的值'));
   }
 }
 
@@ -128,5 +128,5 @@ class Pg2Vm extends ViewModel<int> {
 
   String get strVal => "$m";
 
-  get add => vmOnUpdate(m + 1);
+  get add => vmUpdate(m + 1);
 }

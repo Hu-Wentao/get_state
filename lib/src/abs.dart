@@ -2,9 +2,9 @@
 // Email : hu.wentao@outlook.com
 // Date  : 2020/3/2
 // Time  : 18:09
+
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
-
 final _g = GetIt.instance;
 
 typedef ViewBuilder<VM extends ViewModel> = Widget Function(
@@ -105,10 +105,15 @@ enum VmState {
 /// 建议 M extends Equatable
 abstract class ViewModel<M> extends ChangeNotifier {
   VmState vmState;
-  M m;
+  M _m;
+
+  M get m => _m;
+
+  @protected
+  set m(M m) => _m = m;
 
   ViewModel({M initModel, this.vmState: VmState.idle}) {
-    vmOnInit(initModel);
+    vmInit(initModel);
   }
 
   /// VM是否处于锁定状态
@@ -118,12 +123,12 @@ abstract class ViewModel<M> extends ChangeNotifier {
   /// [initModel]的值从构造方法中传入
   /// 可以覆写本方法, 在本方法内为 [m]赋值
   @protected
-  vmOnInit(M initModel) => m = initModel;
+  vmInit(M initModel) => m = initModel;
 
   /// 刷新状态
   /// 可以覆写本方法, 达到控制刷新粒度的目的
   @protected
-  vmOnUpdate(M newModel) {
+  vmUpdate(M newModel) {
     if (vmCheckAndSetBusy) return;
 
     if (this.m != newModel) {

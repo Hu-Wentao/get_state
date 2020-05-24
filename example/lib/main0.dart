@@ -12,8 +12,8 @@ import 'package:get_state/get_state.dart';
 /// 不使用injectable, 不使用View, 不使用自定义Model
 ///
 /// 注:
-///   请自下而上查看本例源码
-///   本例仅供大家了解get_state原理, 并不推荐下面的写法
+///   请 自下而上 查看本例源码
+///   本例仅供了解 get_state原理, 并不推荐下面的写法
 ///
 /// 1. 编写ViewModel类
 ///   ViewModel负责业务逻辑和操作视图
@@ -21,7 +21,7 @@ import 'package:get_state/get_state.dart';
 ///
 /// 2. 在main方法中注册ViewModel,
 ///   使用 GetIt g = GetIt.instance; 获取服务定位器实例
-///   添加WidgetsFlutterBinding.ensureInitialized(); 以防止ViewModel注册失败
+///   添加 WidgetsFlutterBinding.ensureInitialized(); 以防止ViewModel注册失败
 ///   使用 registerSingleton<T>(<构造方法>) 以懒单例的方式使用ViewModel
 ///   get_it 还有更多的注册方式, 这里暂时只介绍这一种
 
@@ -29,7 +29,7 @@ GetIt g = GetIt.instance;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // 4.依赖注入, 确保View可以获取到ViewModel
+  // 4.手动依赖注入, 确保View可以获取到ViewModel
   g.registerSingleton<CounterVm>(CounterVm());
   runApp(MyApp());
 }
@@ -66,6 +66,6 @@ class CounterVm extends ViewModel<int> {
   // 1.3 操作Model方法,
   // 调用 父类中的vmRefresh()方法更新model的值
   void incrementCounter() {
-    vmOnUpdate(m + 1);
+    vmUpdate(m + 1);
   }
 }

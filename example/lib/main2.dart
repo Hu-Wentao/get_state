@@ -14,14 +14,14 @@ import 'package:get_state/get_state.dart';
 ///   不使用injectable, 单View, 自定义Model
 ///
 /// 要点提示:
-/// 1. 自定义Model类务必覆写 == 与 hashCode方法
-/// 2. 可以使用Equatable, 省去手动覆写
+/// 1. 自定义 Model类务必覆写 == 与 hashCode方法
+/// 2. 可以使用 Equatable, 省去手动覆写
 
 GetIt _g = GetIt.instance;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // 依赖注入
+  // 手动依赖注入
   _g.registerSingleton<MyCounterViewModel>(MyCounterViewModel());
   runApp(MyApp());
 }
@@ -62,7 +62,7 @@ class MyCounterViewModel extends ViewModel<CounterModel> {
   int get counter => m.number;
 
   void incrementCounter() {
-    vmOnUpdate(CounterModel(m.number + 1, '新的值'));
+    vmUpdate(CounterModel(m.number + 1, '新的值'));
   }
 }
 
