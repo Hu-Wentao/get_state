@@ -4,7 +4,9 @@
 // Time  : 18:09
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';
+
 final _g = GetIt.instance;
 
 typedef ViewBuilder<VM extends ViewModel> = Widget Function(
@@ -12,7 +14,6 @@ typedef ViewBuilder<VM extends ViewModel> = Widget Function(
 
 ///-----------------------------------------------------------------------------
 ///
-/// TODO: 后期可能需要使用 HOOK 插件来完成 在View中使用 TextField等功能
 ///
 /// 配合GetIt使用的基础View类
 /// 如果某View的 [_isRootView] == true,那么在它被销毁时, 将会释放对应的VM
@@ -39,37 +40,112 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
   @override
   Widget build(BuildContext context) => widget.build(context, _g<VM>());
 
-  /// ViewState初始化时
-  @mustCallSuper
-  void onStateInit() {
-    _g<VM>().addListener(update);
-  }
-
-  /// ViewState释放时
-  @mustCallSuper
-  void onStateDispose() {
-    _g<VM>().removeListener(update);
-    if (widget._isRootView) {
-      _g.unregister<VM>();
-    }
-  }
-
   /// 刷新内部状态
   update() => setState(() => {});
 
   @override
   void initState() {
-    onStateInit();
     super.initState();
+    _g<VM>().addListener(update);
+    _g<VM>().onInitState(widget, this);
   }
 
   @override
   void dispose() {
-    onStateDispose();
+    _g<VM>().onDispose(widget);
+    _g<VM>().removeListener(update);
+    if (widget._isRootView) _g.unregister<VM>();
     super.dispose();
   }
 }
 
+abstract class ViewH<VM extends ViewModel> extends HookWidget {
+  final bool _isRootView;
+
+  ViewH({Key key, bool isRoot: false})
+      : assert(VM.toString() != 'ViewModel<dynamic>',
+            '$runtimeType<VM>是一个View,它必须添加ViewModel泛型!'),
+        assert(isRoot != null, 'isRoot不能为空'),
+        this._isRootView = isRoot,
+        super(key: key);
+
+  Widget onBuild(BuildContext c, VM vm);
+
+  @protected
+  @override
+  Widget build(BuildContext context) {
+//    useAnimationController();
+    Hook.use(_ViewModelHook());
+    return onBuild(context, _g<VM>());
+  }
+}
+
+class _ViewModelHook<VM extends ViewModel, V extends View<VM>> extends Hook<V> {
+  final Duration duration;
+  final String debugLabel;
+  final double initialValue;
+  final double lowerBound;
+  final double upperBound;
+  final TickerProvider vsync;
+  final AnimationBehavior animationBehavior;
+
+  const _ViewModelHook({
+    this.duration,
+    this.debugLabel,
+    this.initialValue,
+    this.lowerBound,
+    this.upperBound,
+    this.vsync,
+    this.animationBehavior,
+    List<Object> keys,
+  }) : super(keys: keys);
+
+  @override
+  _ViewModelHookState createState() =>
+      _ViewModelHookState();
+}
+
+class _ViewModelHookState<V>
+    extends HookState<V, _ViewModelHook> {
+  AnimationController _animationController;
+
+  @override
+  void didUpdateHook(_AnimationControllerHook oldHook) {
+    super.didUpdateHook(oldHook);
+    if (hook.vsync != oldHook.vsync) {
+      assert(hook.vsync != null && oldHook.vsync != null, '''
+Switching between controller and uncontrolled vsync is not allowed.
+''');
+      _animationController.resync(hook.vsync);
+    }
+
+    if (hook.duration != oldHook.duration) {
+      _animationController.duration = hook.duration;
+    }
+  }
+
+  @override
+  AnimationController build(BuildContext context) {
+    final vsync = hook.vsync ?? useSingleTickerProvider(keys: hook.keys);
+
+    _animationController ??= AnimationController(
+      vsync: vsync,
+      duration: hook.duration,
+      debugLabel: hook.debugLabel,
+      lowerBound: hook.lowerBound,
+      upperBound: hook.upperBound,
+      animationBehavior: hook.animationBehavior,
+      value: hook.initialValue,
+    );
+
+    return _animationController;
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+  }
+}
 ///-----------------------------------------------------------------------------
 /// ViewModel 的状态
 /// [unInit]  只有需要 异步init()的VM才需要这个状态
@@ -162,4 +238,15 @@ abstract class ViewModel<M> extends ChangeNotifier {
   void vmDispose() {
     m = null;
   }
+
+  /// 相当于 State<>类中的 initState();方法
+  /// [widget] 即 State实例的 get widget,
+  /// 不推荐使用该变量, 建议将所有的数据都存放在 ViewModel中操作
+  /// 如果一个VM对应多个View, 则可以通过widget分辨不同的View
+  @protected
+  void onInitState(View widget, State widgetState) {}
+
+  /// 相当于 State<>类中的 dispose();方法
+  @protected
+  void onDispose(View widget) {}
 }

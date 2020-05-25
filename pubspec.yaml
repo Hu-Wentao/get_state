@@ -15,6 +15,7 @@ dependencies:
 
   get_it: ^4.0.2
   equatable: ^1.1.1
+  flutter_hooks: ^0.9.0
 
 dev_dependencies:
   flutter_test:

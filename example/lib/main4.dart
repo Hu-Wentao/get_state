@@ -16,6 +16,8 @@ import 'main3.dart';
 /// 要点提示:
 ///  (4)处为本例重点, 如果怕写错代码, 可以先用injectable自动生成代码,
 ///  然后再剪切到 (4)的位置. 注意, 不能复制, 因为重复注册会报错.
+///
+///  (3)处同样重要, 必须在构造方法中将 isRoot设为true,才能在 View dispose()之后,自动注销vm
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -85,11 +87,10 @@ class FooView extends View<Pg2Vm> {
 /// 而是在Page的 initView中手动注册
 class Pg2Vm extends ViewModel<int> {
   Pg2Vm() : super(initModel: 4);
-
   int get val => m;
 
   get add => vmUpdate(val + 1);
 }
 
 /// 1. Model
-/// 这里直接摔死int作为Model
+/// 这里直接使用 int作为Model
