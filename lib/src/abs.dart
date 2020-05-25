@@ -5,6 +5,7 @@
 
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
+
 final _g = GetIt.instance;
 
 typedef ViewBuilder<VM extends ViewModel> = Widget Function(
@@ -12,7 +13,6 @@ typedef ViewBuilder<VM extends ViewModel> = Widget Function(
 
 ///-----------------------------------------------------------------------------
 ///
-/// TODO: 后期可能需要使用 HOOK 插件来完成 在View中使用 TextField等功能
 ///
 /// 配合GetIt使用的基础View类
 /// 如果某View的 [_isRootView] == true,那么在它被销毁时, 将会释放对应的VM
@@ -39,33 +39,21 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
   @override
   Widget build(BuildContext context) => widget.build(context, _g<VM>());
 
-  /// ViewState初始化时
-  @mustCallSuper
-  void onStateInit() {
-    _g<VM>().addListener(update);
-  }
-
-  /// ViewState释放时
-  @mustCallSuper
-  void onStateDispose() {
-    _g<VM>().removeListener(update);
-    if (widget._isRootView) {
-      _g.unregister<VM>();
-    }
-  }
-
   /// 刷新内部状态
   update() => setState(() => {});
 
   @override
   void initState() {
-    onStateInit();
     super.initState();
+    _g<VM>().addListener(update);
+    _g<VM>().onInitState(widget, this);
   }
 
   @override
   void dispose() {
-    onStateDispose();
+    _g<VM>().onDispose(widget);
+    _g<VM>().removeListener(update);
+    if (widget._isRootView) _g.unregister<VM>();
     super.dispose();
   }
 }
@@ -162,4 +150,15 @@ abstract class ViewModel<M> extends ChangeNotifier {
   void vmDispose() {
     m = null;
   }
+
+  /// 相当于 State<>类中的 initState();方法
+  /// [widget] 即 State实例的 get widget,
+  /// 不推荐使用该变量, 建议将所有的数据都存放在 ViewModel中操作
+  /// 如果一个VM对应多个View, 则可以通过widget分辨不同的View
+  @protected
+  void onInitState(View widget, State widgetState) {}
+
+  /// 相当于 State<>类中的 dispose();方法
+  @protected
+  void onDispose(View widget) {}
 }

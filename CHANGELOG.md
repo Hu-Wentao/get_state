@@ -1,5 +1,8 @@
 ## [3.2.1] - 2020/5/25
-* fix: v3.2.1 is dev version, don't use.
+* feat: add onInitState() and onDispose() to ViewModel, To help you use some Controller
+
+## [3.2.0+1] - 2020/5/25
+* fix: v3.2.0 is dev version, don't use.
 
 ## [3.2.0] - 2020/5/14
 * feat: add mixin"Recorder" for ViewModel, Allows toggling between historical states
