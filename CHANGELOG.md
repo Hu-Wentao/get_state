@@ -1,3 +1,7 @@
+## [3.2.0] - 2020/5/14
+* feat: add mixin"Recorder" for ViewModel, Allows toggling between historical states
+* refactor: rename "ViewModel.model" to "ViewModel.m"
+
 ## [3.1.0] - 2020/5/3
 
 * feat: Asynchronous initialization ViewMode
