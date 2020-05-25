@@ -1,6 +1,6 @@
 name: get_state
 description: state management package based on dependency injection, use the MVVM pattern.(rename from ca_presentation)
-version: 3.2.0
+version: 3.2.0+1
 auth: Hu Wenatao <hu.wentao@outlook.com>
 homepage: https://github.com/Hu-Wentao
 repository: https://github.com/Hu-Wentao/get_state
