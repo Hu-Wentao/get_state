@@ -40,7 +40,7 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
   Widget build(BuildContext context) => widget.build(context, _g<VM>());
 
   /// 刷新内部状态
-  update() => setState(() => {});
+  update() => mounted ? setState(() => {}) : null;
 
   @override
   void initState() {
