@@ -8,12 +8,11 @@ import 'package:get_it/get_it.dart';
 import 'package:get_state/get_state.dart';
 
 ///
-/// 示例1:
+/// 示例1: 初级使用方法 - 适用于数量较少,类型较简单的状态
 /// 不使用injectable, 单View, 不使用自定义Model
 ///
 /// 注:
 ///   请自下而上查看本例源码
-///   下例中的写法适用于数量较少,类型较简单的状态
 ///
 /// 1. 编写 Model类
 ///   Model类就是供View展示的数据
@@ -57,7 +56,7 @@ class MyApp extends StatelessWidget {
 
 ///
 /// View
-/// 3. View就是最终展示出来的Widget, 通过构造方法
+/// 3. View就是最终展示出来的Widget
 class MyCounterView extends View<MyCounterViewModel> {
   @override
   Widget build(BuildContext c, MyCounterViewModel vm) => ListTile(

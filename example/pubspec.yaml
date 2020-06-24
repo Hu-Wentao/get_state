@@ -24,9 +24,9 @@ dependencies:
     path: ..\
 
   ## 2. 可以通过引入equatable,省去手动覆写==和hashCode
-  equatable: ^1.1.1
+  equatable: ^1.2.0
   ## 3. 通过injectable省去手动注册步骤
-  injectable: ^0.4.0
+  injectable: ^0.4.0+1
 
 dev_dependencies:
   flutter_test:
@@ -34,7 +34,7 @@ dev_dependencies:
   ## 3. injectable需要额外添加下面两个依赖
   build_runner: ^1.10.0
   ## 3. 这个同样重要
-  injectable_generator: ^0.4.0
+  injectable_generator: ^0.4.1
 
 
 # For information on the generic Dart part of this file, see the

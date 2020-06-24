@@ -13,7 +13,7 @@ import 'package:injectable/injectable.dart';
 import 'main3.iconfig.dart';
 
 ///
-/// 示例3:
+/// 示例3: 标准使用方法
 /// 使用injectable, 多View, 自定义Model, 跨页状态更改
 ///
 /// 要点提示:

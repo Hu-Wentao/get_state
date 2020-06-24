@@ -10,7 +10,7 @@ import 'package:get_it/get_it.dart';
 import 'package:get_state/get_state.dart';
 
 ///
-/// 示例2:
+/// 示例2: 初级使用方法2 - 自定义Model类型,适用于较简单的状态
 ///   不使用injectable, 单View, 自定义Model
 ///
 /// 要点提示:

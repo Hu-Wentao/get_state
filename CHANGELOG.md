@@ -1,3 +1,9 @@
+## [3.3.0] - 2020/5/25
+* fix: vmUpdate logic bug
+* feat: View can update the Model in the onInitState()
+* add: check mounted before setState()
+* add: new example "main7.dart"
+
 ## [3.2.1] - 2020/5/25
 * feat: add onInitState() and onDispose() to ViewModel, To help you use some Controller
 

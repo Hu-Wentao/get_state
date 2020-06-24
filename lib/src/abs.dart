@@ -21,10 +21,12 @@ abstract class View<VM extends ViewModel> extends StatefulWidget {
 
   View({Key key, bool isRoot: false})
       : assert(VM.toString() != 'ViewModel<dynamic>',
-            '$runtimeType<VM>是一个View,它必须添加ViewModel泛型!'),
+            '$runtimeType<$VM>是一个View,它必须添加ViewModel泛型!'),
         assert(isRoot != null, 'isRoot不能为空'),
         this._isRootView = isRoot,
         super(key: key);
+
+  void onInitState(VM vm) {}
 
   Widget build(BuildContext c, VM vm);
 
@@ -46,7 +48,8 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
   void initState() {
     super.initState();
     _g<VM>().addListener(update);
-    _g<VM>().onInitState(widget, this);
+    _g<VM>().onInitState(widget, this); // 来自ViewModel的onInit()
+    widget.onInitState(_g<VM>()); // 来自View的onInit()
   }
 
   @override
@@ -101,7 +104,7 @@ abstract class ViewModel<M> extends ChangeNotifier {
   set m(M m) => _m = m;
 
   ViewModel({M initModel, this.vmState: VmState.idle}) {
-    vmInit(initModel);
+    if (initModel != null) vmInitModel(initModel);
   }
 
   /// VM是否处于锁定状态
@@ -110,8 +113,12 @@ abstract class ViewModel<M> extends ChangeNotifier {
   /// 初始化ViewModel中的Model
   /// [initModel]的值从构造方法中传入
   /// 可以覆写本方法, 在本方法内为 [m]赋值
-  @protected
-  vmInit(M initModel) => m = initModel;
+  @Deprecated('请使用vmInitModel')
+  vmInit(M initModel) => vmInitModel(initModel);
+
+  ///
+  /// 配合[View]的 onInitState()方法,使用页面传递的参数来初始化Model
+  vmInitModel(M initModel) => m = initModel;
 
   /// 刷新状态
   /// 可以覆写本方法, 达到控制刷新粒度的目的
@@ -122,6 +129,8 @@ abstract class ViewModel<M> extends ChangeNotifier {
     if (this.m != newModel) {
       this.m = newModel;
       vmSetIdleAndNotify;
+    } else {
+      vmSetIdle;
     }
   }
 
