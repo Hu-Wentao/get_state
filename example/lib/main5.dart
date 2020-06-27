@@ -3,20 +3,22 @@
 // Date  : 2020/5/2
 // Time  : 16:41
 
-import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_state/get_state.dart';
 import 'package:injectable/injectable.dart';
-
 import 'main3.dart';
 
+part 'main5.freezed.dart';
+
 ///
-/// 示例5: Vm异步初始化
+/// 示例5: 继承Model类实现, (Freezed的使用)
 /// 使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
-///   ViewModel构造中的 initModel即[vmInit]中的 initModel
+///   ViewModel构造中的 initModel即[vmInit]中的 initModel;
+///   copyWith的使用;
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -28,10 +30,9 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('演示:5.Vm异步初始化'),
+          title: Text('演示:5.freezed的使用'),
         ),
         body: Column(children: <Widget>[
           MyCounterV(),
@@ -45,10 +46,7 @@ class MyApp extends StatelessWidget {
 @lazySingleton
 class MyCounterV extends View<MyCounterVm> {
   @override
-  Widget build(BuildContext c, MyCounterVm vm) =>
-      vm.vmState == VmState.unInit
-          ? CircularProgressIndicator()
-          : ListTile(
+  Widget build(BuildContext c, MyCounterVm vm) => ListTile(
         leading: Text('测试5: ${vm.counter}'),
         title: Text('${vm.str}'),
         trailing: RaisedButton(
@@ -62,33 +60,23 @@ class MyCounterV extends View<MyCounterVm> {
 /// 2. ViewModel
 @lazySingleton
 class MyCounterVm extends ViewModel<CounterM> {
-  MyCounterVm() : super(initModel: CounterM(5, '- -'), vmState: VmState.unInit);
-
-  @override
-  vmInit(CounterM initModel) async {
-    initModel =
-    await Future.delayed(Duration(seconds: 4)).then((_) => CounterM(5, '异步加载'));
-    super.vmInit(initModel);
-  }
+  MyCounterVm() : super(initModel: CounterM(number: 5, str: '- -'));
 
   int get counter => m?.number;
 
   String get str => m?.str;
 
   void incrementCounter() {
-    vmUpdate(CounterM(m.number + 1, '新的值'));
+    //    vmUpdate(CounterM(m.number + 1, '新的值'));
+    /// 1.1 使用 copyWith
+    vmUpdate(m.copyWith(number: m.number + 1));
   }
 }
 
 ///
-/// 1. Model
-class CounterM extends Equatable {
-  final int number;
-  final String str;
-
-  CounterM(this.number, this.str);
-
-  // 1. 这里需要将所有的属性值都放入 props中
-  @override
-  List<Object> get props => [number, str];
+/// 1. Model 第三种实现方式 freezed
+/// freezed会自动覆写toString, ==和 hashCode
+@freezed
+abstract class CounterM with _$CounterM {
+  factory CounterM({int number, String str}) = _CounterM;
 }

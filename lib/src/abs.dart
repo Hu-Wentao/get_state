@@ -26,6 +26,16 @@ abstract class View<VM extends ViewModel> extends StatefulWidget {
         this._isRootView = isRoot,
         super(key: key);
 
+  /// 如果你希望在该View创建的同时,注册VM, 请覆写本方法
+  @protected
+  VM get registerVM => null;
+
+  /// 如果你希望在View创建的时候, 做一些初始化工作, 例如初始化Model, 请覆写本方法
+  /// ```dart
+  /// void onInitState(FooVm vm){
+  ///   vm.vmInitModel(BarModel());
+  /// }
+  /// ```
   void onInitState(VM vm) {}
 
   Widget build(BuildContext c, VM vm);
@@ -47,9 +57,14 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
   @override
   void initState() {
     super.initState();
+    // 注册ViewModel
+    if (widget.registerVM != null) _g.registerSingleton<VM>(widget.registerVM);
+    // 添加监听
     _g<VM>().addListener(update);
-    _g<VM>().onInitState(widget, this); // 来自ViewModel的onInit()
-    widget.onInitState(_g<VM>()); // 来自View的onInit()
+    // 初始化 ViewModel
+    _g<VM>().onInitState(widget, this);
+    // 来自View的onInit()
+    widget.onInitState(_g<VM>());
   }
 
   @override
@@ -171,3 +186,7 @@ abstract class ViewModel<M> extends ChangeNotifier {
   @protected
   void onDispose(View widget) {}
 }
+
+///-----------------------------------------------------------------------------
+
+// Model类推荐 extends Equatable, 或者使用freezed, 这里不便做出约束

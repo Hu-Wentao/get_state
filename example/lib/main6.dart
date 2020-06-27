@@ -15,7 +15,7 @@ import 'main3.dart';
 
 ///
 /// 示例6:
-/// 使用injectable, 多View, 自定义Model, 使用 [Recorder]
+///  使用 [Recorder], 使用injectable, 多View, 自定义Model
 ///
 /// 要点提示:
 ///   1.一般情况下, 不推荐(2.1)的用法,推荐使用(2.2), 或者直接(3.1)
@@ -107,6 +107,7 @@ class RandomDataViewModel extends ViewModel<RandomDataModel>
   int get number => m.number;
 
   void getRandomNumber() {
+    // 还可以使用freezed, 通过copyWith赋值, 详见 main5.dart
     vmUpdate(RandomDataModel(_r.nextInt(100), '随机值'));
   }
 

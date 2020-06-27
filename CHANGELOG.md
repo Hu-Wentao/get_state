@@ -1,6 +1,12 @@
-## [3.3.0] - 2020/5/25
+## [3.4.0] - 2020/6/24
+* feat: View level VM register, see: main4x1.dart
+* remove: VM async init.
+* feat: use freezed for Model, see: main5.dart
+
+## [3.3.0] - 2020/5/31
 * fix: vmUpdate logic bug
-* feat: View can update the Model in the onInitState()
+* feat: View can init Model in onInitState() with vmInitModel()
+    see: main7.dart
 * add: check mounted before setState()
 * add: new example "main7.dart"
 

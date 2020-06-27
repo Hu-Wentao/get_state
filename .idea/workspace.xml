@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="feat(abs): 在setState之前添加mounted判断">
-      <change afterPath="$PROJECT_DIR$/example/lib/main7.dart" afterDir="false" />
+    <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="feat: 新增View级注册ViewModel功能, 使用参见main4x1.dart;&#10;remove: 移除&quot;异步初始化VM&quot;功能,&#10;feat: 新增freezed使用方式,参见main5.dart">
+      <change afterPath="$PROJECT_DIR$/example/lib/main4x1.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/lib/main5.freezed.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main0.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main0.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main3.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main4.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main6.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main6.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/get_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/get_state.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/abs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/abs.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -59,10 +58,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/proj_android" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -70,18 +70,23 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\proj_flutter\get_state\example\lib" />
-      <recent name="D:\proj_flutter\get_state" />
-      <recent name="D:\proj_flutter\get_state\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\proj_flutter\get_state\example\lib" />
       <recent name="D:\proj_flutter\get_state" />
       <recent name="D:\proj_flutter\get_state\lib\src" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\flutter_arch\get_state\example\lib" />
+      <recent name="D:\proj_flutter\get_state\example\lib" />
+      <recent name="D:\proj_flutter\get_state" />
+      <recent name="D:\proj_flutter\get_state\lib" />
+    </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.tests in view_model_test.dart">
+  <component name="RunManager" selected="Flutter.main4x1.dart">
+    <configuration name="main4x1.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/example/lib/main4x1.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="main5.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main5.dart" />
       <method v="2" />
@@ -96,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main4x1.dart" />
         <item itemvalue="Flutter.main6.dart" />
         <item itemvalue="Flutter.main5.dart" />
         <item itemvalue="Flutter.main6.dart" />
@@ -104,6 +110,16 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
     <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -244,38 +260,50 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="530" y="66" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1592817533538" />
-    <state x="86" y="0" key="CommitChangelistDialog2" timestamp="1592994461589">
+    <state x="86" y="0" width="1226" height="834" key="CommitChangelistDialog2" timestamp="1593269040754">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="86" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1592994461589" />
-    <state width="1481" height="158" key="GridCell.Tab.0.bottom" timestamp="1592881471119">
+    <state x="86" y="0" width="1226" height="834" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1593269040754" />
+    <state x="0" y="65" key="DiffContextDialog" timestamp="1593269016439">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1481" height="158" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1592881471119" />
-    <state width="1481" height="158" key="GridCell.Tab.0.center" timestamp="1592881471119">
+    <state x="0" y="65" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1593269016439" />
+    <state x="499" y="116" key="FileChooserDialogImpl" timestamp="1593268244062">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1481" height="158" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1592881471119" />
-    <state width="1481" height="158" key="GridCell.Tab.0.left" timestamp="1592881471118">
+    <state x="499" y="116" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1593268244062" />
+    <state width="1481" height="349" key="GridCell.Tab.0.bottom" timestamp="1593253982859">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1481" height="158" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1592881471118" />
-    <state width="1481" height="158" key="GridCell.Tab.0.right" timestamp="1592881471119">
+    <state width="1481" height="349" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593253982859" />
+    <state width="1481" height="349" key="GridCell.Tab.0.center" timestamp="1593253982859">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1481" height="158" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1592881471119" />
+    <state width="1481" height="349" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1593253982859" />
+    <state width="1481" height="349" key="GridCell.Tab.0.left" timestamp="1593253982859">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1481" height="349" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1593253982859" />
+    <state width="1481" height="349" key="GridCell.Tab.0.right" timestamp="1593253982859">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1481" height="349" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1593253982859" />
     <state x="242" y="50" key="NewModule_or_Project.wizard" timestamp="1592925188814">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="242" y="50" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1592925188814" />
-    <state width="448" height="76" key="javadoc.popup.new" timestamp="1592919161375">
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593248597077">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="448" height="76" key="javadoc.popup.new/0.0.1536.834@0.0.1536.834" timestamp="1592919161375" />
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1592796725826">
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1593248597077" />
+    <state width="448" height="76" key="javadoc.popup.new" timestamp="1593259689517">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1592796725826" />
+    <state width="448" height="76" key="javadoc.popup.new/0.0.1536.834@0.0.1536.834" timestamp="1593259689517" />
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1593248078382">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="347" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1593248078382" />
   </component>
   <component name="masterDetails">
     <states>
