@@ -156,13 +156,6 @@
             </list>
           </value>
         </entry>
-        <entry key="dartz">
-          <value>
-            <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/dartz-0.9.1/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="equatable">
           <value>
             <list>
@@ -202,13 +195,6 @@
           <value>
             <list>
               <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/freezed_annotation-0.11.0/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="get_arch_core">
-          <value>
-            <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_arch_core-0.3.0/lib" />
             </list>
           </value>
         </entry>
@@ -293,13 +279,6 @@
           <value>
             <list>
               <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/json_annotation-3.0.1/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="kt_dart">
-          <value>
-            <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/kt_dart-0.7.0+1/lib" />
             </list>
           </value>
         </entry>
@@ -401,13 +380,6 @@
             </list>
           </value>
         </entry>
-        <entry key="rxdart">
-          <value>
-            <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.24.1/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="shelf">
           <value>
             <list>
@@ -506,13 +478,6 @@
             </list>
           </value>
         </entry>
-        <entry key="verify">
-          <value>
-            <list>
-              <option value="D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/verify-1.1.1/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="watcher">
           <value>
             <list>
@@ -566,12 +531,10 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/crypto-2.1.4/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/csslib-0.16.1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/dart_style-1.3.6/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/dartz-0.9.1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/equatable-1.2.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/fixnum-0.10.11/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/freezed-0.11.2/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/freezed_annotation-0.11.0/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_arch_core-0.3.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/get_it-4.0.2/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/glob-1.2.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/graphs-0.2.0/lib" />
@@ -584,7 +547,6 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/io-0.3.4/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.1+1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/json_annotation-3.0.1/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/kt_dart-0.7.0+1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/logging-0.11.4/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.6/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.8/lib" />
@@ -599,7 +561,6 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/pub_semver-1.4.4/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/pubspec_parse-0.1.5/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/quiver-2.1.3/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.24.1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/shelf-0.7.5/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/shelf_web_socket-0.2.3/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/source_gen-0.9.5/lib" />
@@ -613,7 +574,6 @@
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/timing-0.1.1+2/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.1.6/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.0.8/lib" />
-      <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/verify-1.1.1/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/watcher-0.9.7+15/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/web_socket_channel-1.1.0/lib" />
       <root url="file://D:/dev/flutter/.pub-cache/hosted/pub.flutter-io.cn/xml-3.6.1/lib" />

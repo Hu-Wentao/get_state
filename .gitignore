@@ -20,4 +20,4 @@ doc/api/
 *.js.deps
 *.js.map
 /.idea/
-/.idea/
+/.idea/libraries/

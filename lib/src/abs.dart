@@ -137,9 +137,11 @@ abstract class ViewModel<M> extends ChangeNotifier {
 
   /// 刷新状态
   /// 可以覆写本方法, 达到控制刷新粒度的目的
+  /// [newModel] 新的状态 (get_state的Model也可以是非 immutable,这样直接修改m,就无需传参了)
+  /// [forceUpdate] 是否强制刷新
   @protected
-  vmUpdate(M newModel) {
-    if (vmCheckAndSetBusy) return;
+  vmUpdate(M newModel, {bool forceUpdate: false}) {
+    if (!forceUpdate && vmCheckAndSetBusy) return;
 
     if (this.m != newModel) {
       this.m = newModel;
