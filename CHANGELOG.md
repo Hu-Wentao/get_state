@@ -1,3 +1,7 @@
+## [3.5.0] - 2020/7/4
+* remove : freezed_annotation package
+* feat(ViewModel): ViewModel.vmUpdate()add"bool forceUpdate"param
+
 ## [3.4.0] - 2020/6/24
 * feat: View level VM register, see: main4x1.dart
 * remove: VM async init.

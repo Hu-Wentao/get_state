@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="feat(ads):">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/abs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/abs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/get_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/get_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593269486689</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(ViewModel): vmUpdate()add&quot;bool forceUpdate&quot;param">
+      <created>1593770995941</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1593770995942</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -261,21 +270,22 @@
     <MESSAGE value="feat(abs): 在setState之前添加mounted判断" />
     <MESSAGE value="feat: 新增View级注册ViewModel功能, 使用参见main4x1.dart;&#10;remove: 移除&quot;异步初始化VM&quot;功能,&#10;feat: 新增freezed使用方式,参见main5.dart" />
     <MESSAGE value="refactor(yaml): 调整依赖, 满足发布要求" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(yaml): 调整依赖, 满足发布要求" />
+    <MESSAGE value="feat(ViewModel): vmUpdate()add&quot;bool forceUpdate&quot;param" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ViewModel): vmUpdate()add&quot;bool forceUpdate&quot;param" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="530" y="66" key="#com.intellij.ide.util.MemberChooser" timestamp="1592817533538">
+    <state x="530" y="66" key="#com.intellij.ide.util.MemberChooser" timestamp="1593771556746">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="530" y="66" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1592817533538" />
-    <state x="270" y="0" width="1226" height="834" key="CommitChangelistDialog2" timestamp="1593770982995">
+    <state x="530" y="66" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1593771556746" />
+    <state x="270" y="0" width="1226" height="834" key="CommitChangelistDialog2" timestamp="1593913976068">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="270" y="0" width="1226" height="834" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1593770982995" />
-    <state x="0" y="65" width="1228" height="696" key="DiffContextDialog" timestamp="1593269449469">
+    <state x="270" y="0" width="1226" height="834" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1593913976068" />
+    <state x="0" y="65" width="1228" height="696" key="DiffContextDialog" timestamp="1593913963255">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="0" y="65" width="1228" height="696" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1593269449469" />
+    <state x="0" y="65" width="1228" height="696" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1593913963255" />
     <state x="499" y="116" key="FileChooserDialogImpl" timestamp="1593268244062">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -300,6 +310,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="242" y="50" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1592925188814" />
+    <state x="509" y="62" key="RollbackChangesDialog" timestamp="1593774213129">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="509" y="62" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1593774213129" />
     <state x="261" y="86" key="Vcs.Push.Dialog.v2" timestamp="1593344957680">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

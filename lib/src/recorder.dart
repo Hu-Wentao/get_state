@@ -15,14 +15,14 @@ mixin Recorder<M> on ViewModel<M> {
   List<M> _record = <M>[];
 
   set m(M m) {
-    if(m == null) return;
+    if (m == null) return;
     // 当指向最新的元素时
-    if(_cur == _record.length-1) {
+    if (_cur == _record.length - 1) {
       _record.add(m);
       _cur++;
-    }else{
+    } else {
       // 当指向中间的元素时
-      _record.removeRange(_cur+1, _record.length);
+      _record.removeRange(_cur + 1, _record.length);
       this.m = m;
     }
   }

@@ -26,6 +26,8 @@ dependencies:
   equatable: ^1.2.0
   ## 3. 通过injec table省去手动注册步骤
   injectable: ^0.4.0+1
+  ## 4. 添加 freezed(get_arch_quick_start自带freezed)
+  freezed_annotation: ^0.11.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

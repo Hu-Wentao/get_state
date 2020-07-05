@@ -104,7 +104,7 @@ class CounterModel2 extends Equatable {
 }
 //----------------------------------------
 
-class Page2 extends StatelessWidget{
+class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(),

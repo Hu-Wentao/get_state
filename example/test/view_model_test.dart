@@ -14,9 +14,9 @@ main() async {
     var start = g<MyCounterViewModel>().counter;
     print('开始: $start');
 
-    g<MyCounterViewModel >().incrementCounter();
+    g<MyCounterViewModel>().incrementCounter();
 
-    var end = g<MyCounterViewModel >().counter;
+    var end = g<MyCounterViewModel>().counter;
     print('结束: $end');
 
     expect(start, 1);
@@ -24,14 +24,14 @@ main() async {
   });
 
   test('\n测试 Counter2ViewModel', () async {
-    var start = g<MyCounterViewModel >().counter;
+    var start = g<MyCounterViewModel>().counter;
     print('开始: $start');
 
     // 如果要确保点击有效, 则需要isReady<T>();或者 allReady();
-    await g.isReady<MyCounterViewModel >();
-    g<MyCounterViewModel >().incrementCounter();
+    await g.isReady<MyCounterViewModel>();
+    g<MyCounterViewModel>().incrementCounter();
 
-    var end = g<MyCounterViewModel >().counter;
+    var end = g<MyCounterViewModel>().counter;
     print('结束: $end');
 
     expect(start, 2);
@@ -39,12 +39,12 @@ main() async {
   });
 
   test('\n测试 Counter3ViewModel', () async {
-    var start = g<MyCounterViewModel >().counter;
+    var start = g<MyCounterViewModel>().counter;
     print('开始: $start');
 
-    g<MyCounterViewModel >().incrementCounter();
+    g<MyCounterViewModel>().incrementCounter();
 
-    var end = g<MyCounterViewModel >().counter;
+    var end = g<MyCounterViewModel>().counter;
     print('结束: $end');
 
     expect(start, 3);
@@ -52,12 +52,12 @@ main() async {
   });
 
   test('\n测试 Counter4ViewModel', () async {
-    var start = g<MyCounterViewModel >().counter;
+    var start = g<MyCounterViewModel>().counter;
     print('开始: $start');
 
-    g<MyCounterViewModel >().incrementCounter();
+    g<MyCounterViewModel>().incrementCounter();
 
-    var end = g<MyCounterViewModel >().counter;
+    var end = g<MyCounterViewModel>().counter;
     print('结束: $end');
 
     expect(start, 4);

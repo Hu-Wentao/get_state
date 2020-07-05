@@ -60,7 +60,7 @@ class CounterVm extends ViewModel<int> {
   CounterVm() : super(initModel: 0);
 
   // 1.2 获取Model方法, 这里的model时父类中的属性,其类型用本类泛型指定
-  int counter()=> m;
+  int counter() => m;
 
   // 1.3 操作Model方法,
   // 调用 父类中的vmUpdate()方法更新model的值
