@@ -1,3 +1,6 @@
+## [3.5.1] - 2020/7/5
+* fix(ViewModel): Calling the "View.registerVM" multiple times will not repeat the registration; see: main4x1.dart
+
 ## [3.5.0] - 2020/7/4
 * remove : freezed_annotation package
 * feat(ViewModel): ViewModel.vmUpdate()add"bool forceUpdate"param

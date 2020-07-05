@@ -58,7 +58,8 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
   void initState() {
     super.initState();
     // 注册ViewModel
-    if (widget.registerVM != null) _g.registerSingleton<VM>(widget.registerVM);
+    if (widget.registerVM != null && !_g.isRegistered<VM>())
+      _g.registerSingleton<VM>(widget.registerVM);
     // 添加监听
     _g<VM>().addListener(update);
     // 初始化 ViewModel
@@ -89,24 +90,6 @@ enum VmState {
 
 ///
 /// 抽象ViewModel
-///
-/// 检查是否处于阻塞状态,
-/// 如果是,则返回true,
-/// 如果否,返回false,同时设置VM状态为 [VmState.busy]
-///
-///
-/// ```dart
-///   void incrementCounter() {
-///     // check里面同时执行了 setVMBlocking;
-///     if (vmCheckAndSetBusy ) return;
-///
-///     ... method body ...
-///
-///     vmSetIdleAndNotify;
-///   }
-/// ```
-///
-/// 适用于无需进行耗时初始化的ViewModel
 /// [M] :Model
 /// 建议 M extends Equatable
 abstract class ViewModel<M> extends ChangeNotifier {
@@ -137,11 +120,11 @@ abstract class ViewModel<M> extends ChangeNotifier {
 
   /// 刷新状态
   /// 可以覆写本方法, 达到控制刷新粒度的目的
-  /// [newModel] 新的状态 (get_state的Model也可以是非 immutable,这样直接修改m,就无需传参了)
-  /// [forceUpdate] 是否强制刷新
+  /// [newModel] 新的状态 (get_state的[Model]也可以是非immutable的,这样直接修改m,就无需传参了)
+  /// [ignoreBusy] 是否忽略[VmState.Busy]状态对vmUpdate()的拦截
   @protected
-  vmUpdate(M newModel, {bool forceUpdate: false}) {
-    if (!forceUpdate && vmCheckAndSetBusy) return;
+  vmUpdate(M newModel, {bool ignoreBusy: false}) {
+    if (!ignoreBusy && vmCheckAndSetBusy) return;
 
     if (this.m != newModel) {
       this.m = newModel;
@@ -161,16 +144,16 @@ abstract class ViewModel<M> extends ChangeNotifier {
   }
 
   /// 通知监听者的同时,将VM设为[VmState.idle]
-  get vmSetIdleAndNotify {
+  void get vmSetIdleAndNotify {
     vmSetIdle;
     notifyListeners();
   }
 
   /// 设置VM状态为 [VmState.busy]
-  get vmSetBusy => vmState = VmState.busy;
+  void get vmSetBusy => vmState = VmState.busy;
 
   /// 设置VM状态为 [VmState.idle]
-  get vmSetIdle => vmState = VmState.idle;
+  void get vmSetIdle => vmState = VmState.idle;
 
   @protected
   void vmDispose() {

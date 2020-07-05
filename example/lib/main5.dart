@@ -18,8 +18,8 @@ part 'main5.freezed.dart';
 /// 使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
-///   ViewModel构造中的 initModel即[vmInit]中的 initModel;
-///   copyWith的使用;
+/// * ViewModel构造中的 initModel即[vmInit]中的 initModel;
+/// * copyWith的使用;
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -77,6 +77,15 @@ class MyCounterVm extends ViewModel<CounterM> {
 ///
 /// 1. Model 第三种实现方式 freezed
 /// freezed会自动覆写toString, ==和 hashCode
+/// * freezed使用:
+///   1.0 添加 @freezed 注解
+///   1.1 将Model改为抽象类
+///   1.2 with _$[类名],
+///   1.3 添加带可选参数的工厂构造, 并指向 _[类名], 参数即稍后生成的类的字段.
+///   (此时相关文件尚未生成, _$[类名], _[类名] 都不存在)
+///   1.4 在控制台输入 flutter pub run build_runner watch, 自动生成代码
+///   (注意检查yaml是否添加了相关的依赖, freezed, build_runner等)
+///
 @freezed
 abstract class CounterM with _$CounterM {
   factory CounterM({int number, String str}) = _CounterM;

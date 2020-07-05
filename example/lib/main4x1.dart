@@ -14,7 +14,8 @@ import 'main3.dart';
 ///   使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
-///   v3.4.0新增View级注册方式, 可以取代页面级注册 详见本例
+/// * v3.4.0新增View级注册方式, 可以取代页面级注册 详见本例
+/// * v3.5.1新增VM重复注册保护, 多个View动态注册同一个VM,后初始化的View将不会再次注册VM.
 ///
 /// (3.1)是本例重点
 
@@ -49,7 +50,10 @@ class Page4x1 extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(),
         body: Center(
-          child: FooView(),
+          child: Column(children: [
+            FooView(),
+            Foo2View(),
+          ]),
         ),
       );
 }
@@ -72,6 +76,15 @@ class FooView extends View<Pg2Vm> {
         child: Text('${vm.val}'),
         onPressed: () => vm.add,
       );
+}
+
+class Foo2View extends View<Pg2Vm> {
+  /// 3.2 新版本添加了注册检查功能,
+  /// 已经注册过的VM不会再次注册
+  Pg2Vm get registerVM => Pg2Vm();
+
+  @override
+  Widget build(BuildContext c, Pg2Vm vm) => Text('${vm.val}');
 }
 
 ///
