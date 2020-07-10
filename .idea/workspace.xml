@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3572a53-06ce-4e6f-86db-c39d6faf41c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main4x1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main4x1.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main5.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/abs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/abs.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +52,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/flutter_demo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -294,38 +290,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="0" y="65" width="1228" height="696" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1593913963255" />
-    <state x="499" y="116" key="FileChooserDialogImpl" timestamp="1593268244062">
+    <state x="499" y="116" key="FileChooserDialogImpl" timestamp="1594287003032">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="116" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1593268244062" />
-    <state width="1537" height="305" key="GridCell.Tab.0.bottom" timestamp="1593941160459">
+    <state x="499" y="116" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1594287003032" />
+    <state width="1537" height="571" key="GridCell.Tab.0.bottom" timestamp="1593962913808">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="305" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593941160459" />
-    <state width="1537" height="305" key="GridCell.Tab.0.center" timestamp="1593941160459">
+    <state width="1537" height="571" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1593962913808" />
+    <state width="1537" height="571" key="GridCell.Tab.0.center" timestamp="1593962913808">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="305" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1593941160459" />
-    <state width="1537" height="305" key="GridCell.Tab.0.left" timestamp="1593941160459">
+    <state width="1537" height="571" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1593962913808" />
+    <state width="1537" height="571" key="GridCell.Tab.0.left" timestamp="1593962913807">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="305" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1593941160459" />
-    <state width="1537" height="305" key="GridCell.Tab.0.right" timestamp="1593941160459">
+    <state width="1537" height="571" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1593962913807" />
+    <state width="1537" height="571" key="GridCell.Tab.0.right" timestamp="1593962913808">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1537" height="305" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1593941160459" />
-    <state x="242" y="50" key="NewModule_or_Project.wizard" timestamp="1592925188814">
+    <state width="1537" height="571" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1593962913808" />
+    <state x="242" y="50" key="NewModule_or_Project.wizard" timestamp="1594287016693">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="242" y="50" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1592925188814" />
+    <state x="242" y="50" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1594287016693" />
     <state x="509" y="62" key="RollbackChangesDialog" timestamp="1593774213129">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="509" y="62" key="RollbackChangesDialog/0.0.1536.834@0.0.1536.834" timestamp="1593774213129" />
-    <state x="261" y="86" key="Vcs.Push.Dialog.v2" timestamp="1593949934134">
+    <state x="261" y="86" key="Vcs.Push.Dialog.v2" timestamp="1593950675005">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="261" y="86" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1593949934134" />
+    <state x="261" y="86" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1593950675005" />
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593248597077">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
