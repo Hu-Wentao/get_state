@@ -3,6 +3,7 @@
 // Date  : 2020/3/2
 // Time  : 18:09
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 
@@ -104,8 +105,11 @@ abstract class ViewModel<M> extends ChangeNotifier {
   set m(M m) => _m = m;
 
   ViewModel(Create<M> create, {this.vmState: VmState.unInit}) {
-    vmCreate(create);
+    create == null ? vmSetIdle : vmCreate(create);
   }
+
+  /// VM是否正在初始化(Model创建方法正在执行)
+  bool get vmIsCreating => vmState == VmState.unInit;
 
   /// VM是否处于锁定状态
   bool get vmIsBusy => vmState != VmState.idle;
@@ -144,7 +148,7 @@ abstract class ViewModel<M> extends ChangeNotifier {
   /// }
   /// ```
   vmCreate(Create<M> create) async =>
-      create?.call()?.then((model) => vmUpdate(model, ignoreBusy: true));
+      await create().then((model) => vmUpdate(model, ignoreBusy: true));
 
   /// 刷新状态
   /// 覆写本方法, 以控制刷条件
@@ -168,6 +172,7 @@ abstract class ViewModel<M> extends ChangeNotifier {
   /// 如果否，则设置为busy并返回false
   @protected
   bool get vmCheckAndSetBusy {
+    if (!kReleaseMode) print('[$runtimeType].vmCheckAndSetBusy :[$vmState]');
     if (vmIsBusy) return true;
     vmSetBusy;
     return false;
@@ -175,21 +180,27 @@ abstract class ViewModel<M> extends ChangeNotifier {
 
   /// 通知监听者的同时,将VM设为[VmState.idle]
   void get vmSetIdleAndNotify {
+    if (!kReleaseMode) print('[$runtimeType].vmSetIdleAndNotify');
     vmSetIdle;
     notifyListeners();
   }
 
   /// 设置VM状态为 [VmState.busy]
-  void get vmSetBusy => vmState = VmState.busy;
+  void get vmSetBusy {
+    if (!kReleaseMode) print('[$runtimeType].vmSetBusy');
+    vmState = VmState.busy;
+  }
 
   /// 设置VM状态为 [VmState.idle]
-  void get vmSetIdle => vmState = VmState.idle;
+  void get vmSetIdle {
+    if (!kReleaseMode) print('[$runtimeType].vmSetIdle');
+    vmState = VmState.idle;
+  }
 
   @protected
   void vmDispose() {
     m = null;
   }
-
 
   /// 相当于 State<>类中的 dispose();方法
   @protected
