@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
 /// 在泛型中指定ViewModel所使用的Model类型, 本例使用int类型
 class CounterVm extends ViewModel<int> {
   // 1.1 在ViewModel的构造中, 提供默认的初始值
-  CounterVm() : super(initModel: 0);
+  CounterVm() : super(()async=> 0);
 
   // 1.2 获取Model方法, 这里的model时父类中的属性,其类型用本类泛型指定
   int counter() => m;

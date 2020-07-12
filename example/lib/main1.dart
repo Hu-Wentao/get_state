@@ -73,9 +73,9 @@ class MyCounterView extends View<MyCounterViewModel> {
 /// 2. ViewModel主要负责业务逻辑, 在泛型中指定ViewModel所使用的Model类型
 class MyCounterViewModel extends ViewModel<int> {
   // 2.1 在ViewModel的构造中, 提供默认的初始值
-  MyCounterViewModel() : super(initModel: 1);
+  MyCounterViewModel() : super(()async=> 1);
 
-//  MyCounterViewModel(int initModel) : super(initModel: initModel);
+//  MyCounterViewModel(int initModel) : super(()async=> initModel);
 
   // 2.2 获取Model方法
   int get counter => m;

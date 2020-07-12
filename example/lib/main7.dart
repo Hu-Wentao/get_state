@@ -55,7 +55,7 @@ class ParamView extends View<ParamVm> {
   /// 关键代码!
   /// 在这里初始化ViewModel持有的Model
   void onInitState(ParamVm vm) {
-    vm.vmInitModel(param);
+    vm.vmUpdate(param);
   }
 
   @override
@@ -69,5 +69,7 @@ class ParamView extends View<ParamVm> {
 /// 这个ViewModel没有什么业务逻辑, 只有一个获取model的功能,
 /// 简单包装成一个 get 方法
 class ParamVm extends ViewModel<int> {
+  ParamVm() : super(null);
+
   String get info => '信息内容[$m]';
 }

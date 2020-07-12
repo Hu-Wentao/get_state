@@ -61,6 +61,7 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
     if (widget.registerVM != null && !_g.isRegistered<VM>())
       _g.registerSingleton<VM>(widget.registerVM);
     // 添加监听
+    // todo 或许可以在这里根据状态值选择性拦截刷新命令
     _g<VM>().addListener(update);
     // 初始化 ViewModel
     _g<VM>().onInitState(widget, this);
@@ -78,6 +79,9 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
 }
 
 ///-----------------------------------------------------------------------------
+/// 创建Model的函数, 可以是异步的, 这样就能够异步初始化ViewModel了
+typedef Create<T> = Future<T> Function();
+
 /// ViewModel 的状态
 /// [unInit]  只有需要 异步init()的VM才需要这个状态
 /// [idle]     非异步VM的初始状态, 或者异步init的VM 初始化完成后的状态
@@ -101,28 +105,56 @@ abstract class ViewModel<M> extends ChangeNotifier {
   @protected
   set m(M m) => _m = m;
 
-  ViewModel({M initModel, this.vmState: VmState.idle}) {
-    if (initModel != null) vmInitModel(initModel);
+  ViewModel(Create<M> create, {this.vmState: VmState.unInit}) {
+    vmCreate(create);
   }
 
   /// VM是否处于锁定状态
   bool get vmIsBusy => vmState != VmState.idle;
 
-  /// 初始化ViewModel中的Model
-  /// [initModel]的值从构造方法中传入
-  /// 可以覆写本方法, 在本方法内为 [m]赋值
-  @Deprecated('请使用vmInitModel')
-  vmInit(M initModel) => vmInitModel(initModel);
+  @Deprecated('请使用vmCreate')
+  vmInit(M initModel) => vmCreate(() async => initModel);
+  @Deprecated('请使用vmCreate')
+  vmInitModel(Create<M> create) => vmCreate(create);
 
   ///
-  /// 配合[View]的 onInitState()方法,使用页面传递的参数来初始化Model
-  vmInitModel(M initModel) => m = initModel;
+  /// If you create a Model without getting parameters from the View,
+  ///   then provide the model in the construction method of the ViewModel.
+  /// 如果创建Model 无需从View中获取参数,
+  ///     则直接在ViewModel的构造方法中提供Model即可
+  /// ```dart
+  /// class BarVm extends ViewModel<BarM> {
+  ///   final int someVmParamFromGetIt
+  ///   BarVm(this.someVmParamFromGetIt) : super(() async => BarM());
+  /// }
+  /// ```
+  ///
+  /// If you create a model, you also need to get parameters from the View (e.g., parameters passed from the page jump),
+  ///   It is recommended to call vmUpdate() to update the model in the onInitState() method of [View].
+  /// 如果创建Model时,还需要从View中获取参数(如页面跳转传来的参数),
+  ///     推荐在[View]的 onInitState()方法中,调用 vmUpdate()更新Model
+  /// ```dart
+  /// class BarV extends View<BarVm> {
+  ///   final String someParamFromRoute;
+  ///   BarV(this.someParamFromRoute);
+  ///
+  ///   @override
+  ///   void onInitState(BarVm vm) => vm.vmUpdate(BarM(data: someParamFromRoute));
+  ///
+  ///   @override
+  ///   Widget build(BuildContext c, BarVm vm) => ... some ui code ...;
+  /// }
+  /// ```
+  vmCreate(Create<M> create) async =>
+      create?.call()?.then((model) => vmUpdate(model, ignoreBusy: true));
 
   /// 刷新状态
-  /// 可以覆写本方法, 达到控制刷新粒度的目的
-  /// [newModel] 新的状态 (get_state的[Model]也可以是非immutable的,这样直接修改m,就无需传参了)
+  /// 覆写本方法, 以控制刷条件
+  /// [newModel] 新的状态
+  ///   get_state的[Model]也可以是非immutable的,
+  ///   immutable通过对象替换来更新m, 类似Redux, BLoC <推荐>
+  ///   非immutable可以直接更新m的字段, 类似Provider
   /// [ignoreBusy] 是否忽略[VmState.Busy]状态对vmUpdate()的拦截
-  @protected
   vmUpdate(M newModel, {bool ignoreBusy: false}) {
     if (!ignoreBusy && vmCheckAndSetBusy) return;
 
