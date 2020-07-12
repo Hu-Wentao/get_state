@@ -63,8 +63,6 @@ class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
     // 添加监听
     // todo 或许可以在这里根据状态值选择性拦截刷新命令
     _g<VM>().addListener(update);
-    // 初始化 ViewModel
-    _g<VM>().onInitState(widget, this);
     // 来自View的onInit()
     widget.onInitState(_g<VM>());
   }
@@ -192,12 +190,6 @@ abstract class ViewModel<M> extends ChangeNotifier {
     m = null;
   }
 
-  /// 相当于 State<>类中的 initState();方法
-  /// [widget] 即 State实例的 get widget,
-  /// 不推荐使用该变量, 建议将所有的数据都存放在 ViewModel中操作
-  /// 如果一个VM对应多个View, 则可以通过widget分辨不同的View
-  @protected
-  void onInitState(View widget, State widgetState) {}
 
   /// 相当于 State<>类中的 dispose();方法
   @protected
