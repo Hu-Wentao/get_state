@@ -57,7 +57,7 @@ class MyCounterView extends View<MyCounterViewModel> {
 ///
 /// 2. ViewModel
 class MyCounterViewModel extends ViewModel<CounterModel> {
-  MyCounterViewModel() : super(()async=> CounterModel(2, '- -'));
+  MyCounterViewModel() : super(() async => CounterModel(2, '- -'));
 
   int get counter => m.number;
 

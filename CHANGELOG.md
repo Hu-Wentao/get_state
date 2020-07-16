@@ -1,6 +1,7 @@
-## [4.0.0] - 2020/7/13
-* refactor(ViewModel): VM constructure support async init model. see: "ViewModel.vmCreate()"doc
+## [3.6.0] - 2020/7/16
+* refactor(ViewModel): VM constructor support async init model. see: "ViewModel.vmCreate()"doc
 * remove(ViewModel): ViewModel.onInitState()
+* feat: support get_arch_core ">=0.6.1 <2.0.0"
 
 ## [3.5.1] - 2020/7/5
 * fix(ViewModel): Calling the "View.registerVM" multiple times will not repeat the registration; see: main4x1.dart

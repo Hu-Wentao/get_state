@@ -25,15 +25,17 @@ enum VmState {
 abstract class ViewModel<M> extends ChangeNotifier {
   VmState vmState;
   M _m;
+  ViewModel(Create<M> create, {this.vmState: VmState.unInit}) {
+    create == null ? vmSetIdle : vmCreate(create);
+  }
+
+  @protected
+  bool get hasListeners => super.hasListeners;
 
   M get m => _m;
 
   @protected
   set m(M m) => _m = m;
-
-  ViewModel(Create<M> create, {this.vmState: VmState.unInit}) {
-    create == null ? vmSetIdle : vmCreate(create);
-  }
 
   /// VM是否正在初始化(Model创建方法正在执行)
   bool get vmIsCreating => vmState == VmState.unInit;
@@ -80,9 +82,9 @@ abstract class ViewModel<M> extends ChangeNotifier {
   /// 刷新状态
   /// 覆写本方法, 以控制刷条件
   /// [newModel] 新的状态
-  ///   get_state的[Model]也可以是非immutable的,
+  ///   get_state的[Model]也可以是mutable的,
   ///   immutable通过对象替换来更新m, 类似Redux, BLoC <推荐>
-  ///   非immutable可以直接更新m的字段, 类似Provider
+  ///   mutable可以直接更新m的字段, 类似Provider
   /// [ignoreBusy] 是否忽略[VmState.Busy]状态对vmUpdate()的拦截
   vmUpdate(M newModel, {bool ignoreBusy: false}) {
     if (!ignoreBusy && vmCheckAndSetBusy) return;

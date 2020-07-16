@@ -15,7 +15,7 @@ abstract class View<VM extends ViewModel> extends StatefulWidget {
 
   View({Key key, bool isRoot: false})
       : assert(VM.toString() != 'ViewModel<dynamic>',
-  '$runtimeType<$VM>是一个View,它必须添加ViewModel泛型!'),
+            '$runtimeType<$VM>是一个View,它必须添加ViewModel泛型!'),
         assert(isRoot != null, 'isRoot不能为空'),
         this._isRootView = isRoot,
         super(key: key);

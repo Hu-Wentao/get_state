@@ -61,7 +61,7 @@ class MyCounterV extends View<MyCounterVm> {
 /// 2. ViewModel
 @lazySingleton
 class MyCounterVm extends ViewModel<CounterM> {
-  MyCounterVm() : super(()async=> CounterM(number: 5, str: '- -'));
+  MyCounterVm() : super(() async => CounterM(number: 5, str: '- -'));
 
   int get counter => m?.number;
 

@@ -101,7 +101,7 @@ class MyCounterView extends View<RandomDataViewModel> {
 @lazySingleton
 class RandomDataViewModel extends ViewModel<RandomDataModel>
     with Recorder<RandomDataModel> {
-  RandomDataViewModel() : super(()async=> RandomDataModel(3, '初始值'));
+  RandomDataViewModel() : super(() async => RandomDataModel(3, '初始值'));
   Random _r = Random();
 
   int get number => m.number;
