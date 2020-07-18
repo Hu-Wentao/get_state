@@ -24,6 +24,8 @@ enum VmState {
 /// 建议 M extends Equatable
 abstract class ViewModel<M> extends ChangeNotifier {
   VmState vmState;
+  @Deprecated("Avoid using the Model directly"
+      'Will be removed after 4.0.0')
   M _m;
   ViewModel(Create<M> create, {this.vmState: VmState.unInit}) {
     create == null ? vmSetIdle : vmCreate(create);
@@ -32,8 +34,12 @@ abstract class ViewModel<M> extends ChangeNotifier {
   @protected
   bool get hasListeners => super.hasListeners;
 
+  @Deprecated("Avoid using the Model directly"
+      'Will be removed after 4.0.0')
   M get m => _m;
 
+  @Deprecated("Avoid using the Model directly"
+      'Will be removed after 4.0.0')
   @protected
   set m(M m) => _m = m;
 
