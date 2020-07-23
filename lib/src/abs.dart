@@ -7,9 +7,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_arch_core/get_arch_core.dart';
 import 'package:get_it/get_it.dart';
+import 'package:get_state/src/vm/vm_state.dart';
 
 part 'view.dart';
-part 'view_model.dart';
+part 'vm/view_model.dart';
+part 'vm/base_view_model.dart';
 part 'model.dart';
 
 final _g = GetIt.instance;

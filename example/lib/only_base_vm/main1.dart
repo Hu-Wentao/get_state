@@ -71,18 +71,19 @@ class MyCounterView extends View<MyCounterViewModel> {
 ///
 /// ViewModel
 /// 2. ViewModel主要负责业务逻辑, 在泛型中指定ViewModel所使用的Model类型
-class MyCounterViewModel extends ViewModel<int> {
+class MyCounterViewModel extends ViewModel {
+  int _model;
   // 2.1 在ViewModel的构造中, 提供默认的初始值
-  MyCounterViewModel() : super(create: () async => 1);
+  MyCounterViewModel() : _model = 1;
 
 //  MyCounterViewModel(int initModel) : super(()async=> initModel);
 
   // 2.2 获取Model方法
-  int get counter => m;
+  int get counter => _model;
 
   // 2.3 操作Model方法,
-  // 调用 父类中的vmUpdate()方法更新model的值
-  void incrementCounter() => vmUpdate(m + 1);
+  // 调用 父类中的vmRefresh()方法更新model的值
+  void incrementCounter() => vmRefresh(() => _model++);
 }
 
 ///

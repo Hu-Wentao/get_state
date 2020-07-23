@@ -49,7 +49,7 @@ class MyCounterV extends View<MyCounterVm> {
   @override
   Widget build(BuildContext c, MyCounterVm vm) => ListTile(
         leading: Text('测试5: ${vm.counter}'),
-        title: Text('${vm.str}'),
+        title: Text('${vm.strVal}'),
         trailing: RaisedButton(
           child: Icon(Icons.add),
           onPressed: () => vm.incrementCounter(),
@@ -60,18 +60,16 @@ class MyCounterV extends View<MyCounterVm> {
 ///
 /// 2. ViewModel
 @lazySingleton
-class MyCounterVm extends ViewModel<CounterM> {
-  MyCounterVm() : super(create: () async => CounterM(number: 5, str: '- -'));
+class MyCounterVm extends ViewModel {
+  CounterM _model;
 
-  int get counter => m?.number;
+  MyCounterVm() : _model = CounterM(number: 5, str: '- -');
 
-  String get str => m?.str;
+  int get counter => _model.number;
+  String get strVal => _model.str;
 
-  void incrementCounter() {
-    //    vmUpdate(CounterM(m.number + 1, '新的值'));
-    /// 1.1 使用 copyWith
-    vmUpdate(m.copyWith(number: m.number + 1));
-  }
+  void incrementCounter() =>
+      vmRefresh(() => _model = _model.copyWith(number: _model.number + 1));
 }
 
 ///

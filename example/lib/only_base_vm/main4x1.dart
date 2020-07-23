@@ -91,12 +91,12 @@ class Foo2View extends View<Pg2Vm> {
 /// 2. ViewModel
 /// 注意, 本ViewModel不使用注解进行全局注册,
 /// 而是在Page的 initView中手动注册
-class Pg2Vm extends ViewModel<int> {
-  Pg2Vm() : super(create: () async => 4);
+class Pg2Vm extends ViewModel {
+  int _model = 4;
 
-  int get val => m;
+  int get val => _model;
 
-  get add => vmUpdate(val + 1);
+  get add => vmRefresh(() => _model += 1);
 }
 
 /// 1. Model

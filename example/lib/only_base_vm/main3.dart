@@ -69,7 +69,7 @@ class MyCounterView extends View<MyCounterViewModel> {
   @override
   Widget build(BuildContext c, MyCounterViewModel vm) => ListTile(
         leading: Text('测试3: ${vm.counter}'),
-        title: Text('${vm.m.str}'),
+        title: Text('${vm.strVal}'),
         trailing: RaisedButton(
           child: Icon(Icons.add),
           onPressed: () => vm.incrementCounter(),
@@ -81,13 +81,15 @@ class MyCounterView extends View<MyCounterViewModel> {
 /// 2. ViewModel
 @lazySingleton
 class MyCounterViewModel extends ViewModel<CounterModel2> {
-  MyCounterViewModel() : super(create: () async => CounterModel2(3, '- -'));
+  CounterModel2 _model;
 
-  int get counter => m.number;
+  MyCounterViewModel() : _model = CounterModel2(3, '- -');
 
-  void incrementCounter() {
-    vmUpdate(CounterModel2(m.number + 1, '新的值'));
-  }
+  int get counter => _model.number;
+  String get strVal => _model.str;
+
+  void incrementCounter() =>
+      vmRefresh(() => _model = CounterModel2(_model.number + 1, '新的值'));
 }
 
 ///
@@ -123,10 +125,12 @@ class FooView extends View<Pg2Vm> {
 }
 
 @lazySingleton
-class Pg2Vm extends ViewModel<int> {
-  Pg2Vm() : super(create: () async => 3);
+class Pg2Vm extends ViewModel {
+  int _model;
 
-  String get strVal => "$m";
+  Pg2Vm() : this._model = 3;
 
-  get add => vmUpdate(m + 1);
+  String get strVal => "$_model";
+
+  get add => vmRefresh(() => _model++);
 }

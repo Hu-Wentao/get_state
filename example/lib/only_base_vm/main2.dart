@@ -46,7 +46,7 @@ class MyCounterView extends View<MyCounterViewModel> {
   @override
   Widget build(BuildContext c, MyCounterViewModel vm) => ListTile(
         leading: Text('测试2: ${vm.counter}'),
-        title: Text('${vm.m.str}'),
+        title: Text('${vm.strVal}'),
         trailing: RaisedButton(
           child: Icon(Icons.add),
           onPressed: () => vm.incrementCounter(),
@@ -56,14 +56,16 @@ class MyCounterView extends View<MyCounterViewModel> {
 
 ///
 /// 2. ViewModel
-class MyCounterViewModel extends ViewModel<CounterModel> {
-  MyCounterViewModel() : super(create: () async => CounterModel(2, '- -'));
+class MyCounterViewModel extends ViewModel {
+  CounterModel _model;
 
-  int get counter => m.number;
+  MyCounterViewModel() : _model = CounterModel(2, '- -');
 
-  void incrementCounter() {
-    vmUpdate(CounterModel(m.number + 1, '新的值'));
-  }
+  int get counter => _model.number;
+  String get strVal => _model.str;
+
+  void incrementCounter() =>
+      vmRefresh(() => _model = CounterModel(_model.number + 1, '新的值'));
 }
 
 ///

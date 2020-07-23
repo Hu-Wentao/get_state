@@ -10,7 +10,7 @@ part of 'abs.dart';
 ///
 /// 配合GetIt使用的基础View类
 /// 如果某View的 [_isRootView] == true,那么在它被销毁时, 将会释放对应的VM
-abstract class View<VM extends ViewModel> extends StatefulWidget {
+abstract class View<VM extends BaseViewModel> extends StatefulWidget {
   final bool _isRootView;
 
   View({Key key, bool isRoot: false})
@@ -41,7 +41,8 @@ abstract class View<VM extends ViewModel> extends StatefulWidget {
 /// ViewSate
 /// [VM] View所绑定的ViewModel
 /// [V] ViewState所绑定的View
-class _ViewState<VM extends ViewModel, V extends View<VM>> extends State<V> {
+class _ViewState<VM extends BaseViewModel, V extends View<VM>>
+    extends State<V> {
   @override
   Widget build(BuildContext context) => widget.build(context, _g<VM>());
 

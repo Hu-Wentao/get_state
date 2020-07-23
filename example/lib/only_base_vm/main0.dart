@@ -55,16 +55,18 @@ class MyApp extends StatelessWidget {
 /// ViewModel
 /// 1. ViewModel主要负责业务逻辑,
 /// 在泛型中指定ViewModel所使用的Model类型, 本例使用int类型
-class CounterVm extends ViewModel<int> {
+/// 对于简单状态, 不建议使用状态管理方案, 直接setState就好
+class CounterVm extends ViewModel{
+  int _model;
   // 1.1 在ViewModel的构造中, 提供默认的初始值
-  CounterVm() : super(create: () async => 0);
-
+  CounterVm():_model = 0;
   // 1.2 获取Model方法, 这里的model时父类中的属性,其类型用本类泛型指定
-  int counter() => m;
+  int counter() => _model;
 
   // 1.3 操作Model方法,
   // 调用 父类中的vmUpdate()方法更新model的值
   void incrementCounter() {
-    vmUpdate(m + 1);
+    _model++;
+    vmSetIdleAndNotify;
   }
 }

@@ -13,9 +13,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  get_it: ^4.0.2
-  rxdart: ^0.24.1
-  get_arch_core: '>=0.6.1 <2.0.0'
+#  get_arch_core: '>=0.6.1 <2.0.0'
+  get_arch_core:
+    path: D:/flutter_arch/get_arch_core
 
 dev_dependencies:
   flutter_test:

@@ -3,45 +3,30 @@
 // Date  : 2020/7/14
 // Time  : 22:17
 
-part of 'abs.dart';
+part of '../abs.dart';
 
 /// 创建Model的函数, 可以是异步的, 这样就能够异步初始化ViewModel了
 typedef Create<T> = Future<T> Function();
-
-/// ViewModel 的状态
-/// [unInit]  只有需要 异步init()的VM才需要这个状态
-/// [idle]     非异步VM的初始状态, 或者异步init的VM 初始化完成后的状态
-/// [busy] VM正在执行某个方法, 并且尚未执行完毕, 此时VM已阻塞,将忽略任何方法调用
-enum VmState {
-  unInit,
-  idle,
-  busy,
-}
 
 ///
 /// 抽象ViewModel
 /// [M] :Model
 /// 建议 M extends Equatable
-abstract class ViewModel<M> extends ChangeNotifier {
+/// 4.0.0 以后, ViewModel不再绑定某一个Model, 一个VM可以管理多个Model,
+///   因此泛型[M] 不再有意义
+abstract class ViewModel<M> extends BaseViewModel {
   VmState vmState;
-  @Deprecated("Avoid using the Model directly"
-      'Will be removed after 4.0.0')
   M _m;
-  ViewModel(Create<M> create, {this.vmState: VmState.unInit}) {
+
+  ViewModel({Create<M> create, this.vmState: VmState.unInit}) {
     create == null ? vmSetIdle : vmCreate(create);
   }
 
-  @protected
-  bool get hasListeners => super.hasListeners;
-
-  @Deprecated("Avoid using the Model directly"
-      'Will be removed after 4.0.0')
   M get m => _m;
-
-  @Deprecated("Avoid using the Model directly"
-      'Will be removed after 4.0.0')
   @protected
   set m(M m) => _m = m;
+  @protected
+  bool get hasListeners => super.hasListeners;
 
   /// VM是否正在初始化(Model创建方法正在执行)
   bool get vmIsCreating => vmState == VmState.unInit;
@@ -49,10 +34,48 @@ abstract class ViewModel<M> extends ChangeNotifier {
   /// VM是否处于锁定状态
   bool get vmIsBusy => vmState != VmState.idle;
 
-  @Deprecated('请使用vmCreate')
-  vmInit(M initModel) => vmCreate(() async => initModel);
-  @Deprecated('请使用vmCreate')
-  vmInitModel(Create<M> create) => vmCreate(create);
+  /// 检查状态是否为Busy，
+  /// 如果否，则设置为busy并返回false
+  @protected
+  bool get vmCheckAndSetBusy {
+    if (!kReleaseMode) print('[$runtimeType].vmCheckAndSetBusy :[$vmState]');
+    if (vmIsBusy) return true;
+    vmSetBusy;
+    return false;
+  }
+
+  /// 通知监听者的同时,将VM设为[VmState.idle]
+  void get vmSetIdleAndNotify {
+    if (!kReleaseMode) print('[$runtimeType].vmSetIdleAndNotify');
+    vmSetIdle;
+    notifyListeners();
+  }
+
+  /// 设置VM状态为 [VmState.busy]
+  void get vmSetBusy {
+    if (!kReleaseMode) print('[$runtimeType].vmSetBusy');
+    vmState = VmState.busy;
+  }
+
+  /// 设置VM状态为 [VmState.idle]
+  void get vmSetIdle {
+    if (!kReleaseMode) print('[$runtimeType].vmSetIdle');
+    vmState = VmState.idle;
+  }
+
+  vmRefresh([void Function() fn, bool setIdle = true]) {
+    fn?.call();
+    setIdle ? vmSetIdleAndNotify : notifyListeners();
+  }
+
+  /// 相当于 State<>类中的 dispose();方法
+  @protected
+  void onDispose(View widget) {}
+
+  @protected
+  void vmDispose() {
+    m = null;
+  }
 
   ///
   /// If you create a Model without getting parameters from the View,
@@ -103,41 +126,8 @@ abstract class ViewModel<M> extends ChangeNotifier {
     }
   }
 
-  /// 检查状态是否为Busy，
-  /// 如果否，则设置为busy并返回false
-  @protected
-  bool get vmCheckAndSetBusy {
-    if (!kReleaseMode) print('[$runtimeType].vmCheckAndSetBusy :[$vmState]');
-    if (vmIsBusy) return true;
-    vmSetBusy;
-    return false;
-  }
-
-  /// 通知监听者的同时,将VM设为[VmState.idle]
-  void get vmSetIdleAndNotify {
-    if (!kReleaseMode) print('[$runtimeType].vmSetIdleAndNotify');
-    vmSetIdle;
-    notifyListeners();
-  }
-
-  /// 设置VM状态为 [VmState.busy]
-  void get vmSetBusy {
-    if (!kReleaseMode) print('[$runtimeType].vmSetBusy');
-    vmState = VmState.busy;
-  }
-
-  /// 设置VM状态为 [VmState.idle]
-  void get vmSetIdle {
-    if (!kReleaseMode) print('[$runtimeType].vmSetIdle');
-    vmState = VmState.idle;
-  }
-
-  @protected
-  void vmDispose() {
-    m = null;
-  }
-
-  /// 相当于 State<>类中的 dispose();方法
-  @protected
-  void onDispose(View widget) {}
+  @Deprecated('请使用vmCreate')
+  vmInit(M initModel) => vmCreate(() async => initModel);
+  @Deprecated('请使用vmCreate')
+  vmInitModel(Create<M> create) => vmCreate(create);
 }

@@ -10,14 +10,12 @@ import 'package:get_state/get_state.dart';
 import 'main3.dart';
 
 ///
-/// 示例4x1: <v3.4.0+>视图级注册
+/// 示例4: 页面级注册
 ///   使用injectable, 单View, 自定义Model,
 ///
 /// 要点提示:
-/// * v3.4.0新增View级注册方式, 可以取代页面级注册 详见本例
-/// * v3.5.1新增VM重复注册保护, 多个View动态注册同一个VM,后初始化的View将不会再次注册VM.
-///
-/// (3.1)是本例重点
+///  (4)处为本例重点, 如果怕写错依赖注入代码, 可以先用injectable自动生成代码,
+///  然后再剪切到 (4)的位置. 注意, 不能复制, 因为重复注册会报错.
 
 /// 本文件内容依赖于 main3
 Future<void> main() async {
@@ -31,13 +29,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('演示:4x1.视图级VM注册'),
+          title: Text('演示:4.性能优化(页面级VM的使用)'),
         ),
         body: Column(children: <Widget>[
           RaisedButton(
             child: Text('跳转到新页面'),
             onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (c) => Page4x1(),
+              builder: (c) => Page2(),
             )),
           )
         ]),
@@ -45,15 +43,24 @@ class MyApp extends StatelessWidget {
 }
 //----------------------------------------
 
-class Page4x1 extends StatelessWidget {
+class Page2 extends StatefulWidget {
+  @override
+  _Page2State createState() => _Page2State();
+}
+
+class _Page2State extends State<Page2> {
+  @override
+  void initState() {
+    /// 4. 手动注册 VM
+    g.registerLazySingleton<Pg2Vm>(() => Pg2Vm());
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(),
         body: Center(
-          child: Column(children: [
-            FooView(),
-            Foo2View(),
-          ]),
+          child: FooView(),
         ),
       );
 }
@@ -65,12 +72,6 @@ class Page4x1 extends StatelessWidget {
 class FooView extends View<Pg2Vm> {
   FooView() : super(isRoot: true);
 
-  /// 3.1 在View创建的同时, 注册ViewModel
-  /// 注意, 如果一个页面中, 有多个View共用同一个ViewModel, 推荐使用页面级别注册
-  ///   如果使用视图级别注册, 只需要注册一次, 全局均可使用(同理, 如果多次注册同一个VM,则会报错)
-  @override
-  Pg2Vm get registerVM => Pg2Vm();
-
   @override
   Widget build(BuildContext c, Pg2Vm vm) => RaisedButton(
         child: Text('${vm.val}'),
@@ -78,25 +79,16 @@ class FooView extends View<Pg2Vm> {
       );
 }
 
-class Foo2View extends View<Pg2Vm> {
-  /// 3.2 新版本添加了注册检查功能,
-  /// 已经注册过的VM不会再次注册
-  Pg2Vm get registerVM => Pg2Vm();
-
-  @override
-  Widget build(BuildContext c, Pg2Vm vm) => Text('${vm.val}');
-}
-
 ///
 /// 2. ViewModel
 /// 注意, 本ViewModel不使用注解进行全局注册,
 /// 而是在Page的 initView中手动注册
-class Pg2Vm extends ViewModel<int> {
-  Pg2Vm() : super(create: () async => 4);
+class Pg2Vm extends ViewModel {
+  int _model = 4;
 
-  int get val => m;
+  int get val => _model;
 
-  get add => vmUpdate(val + 1);
+  get add => vmRefresh(() => _model += 1);
 }
 
 /// 1. Model
