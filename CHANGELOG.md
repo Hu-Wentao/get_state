@@ -1,7 +1,14 @@
+## [3.7.0] - 2020/8/1
+* add: BaseViewModel and example "base_vm/main1.dart", to support multi model(get_arch_core.LiveData/LiveModel)
+* feat(base_view_model.dart): add vmNotify();
+* remove(view_model.dart): vmRefresh();
+* refactor(view.dart): add registerVmInstance instead registerVM;
+* feat(get_state.dart): export get_it;
+* remove: All dependencies on "get_arch_core" were removed
 ## [3.6.0] - 2020/7/16
 * refactor(ViewModel): VM constructor support async init model. see: "ViewModel.vmCreate()"doc
 * remove(ViewModel): ViewModel.onInitState()
-* feat: support get_arch_core ">=0.6.1 <2.0.0"
+* feat: support "get_arch_core" ">=0.6.1 <2.0.0"
 
 ## [3.5.1] - 2020/7/5
 * fix(ViewModel): Calling the "View.registerVM" multiple times will not repeat the registration; see: main4x1.dart

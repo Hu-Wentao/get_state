@@ -5,7 +5,6 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get_arch_core/get_arch_core.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_state/src/vm/vm_state.dart';
 

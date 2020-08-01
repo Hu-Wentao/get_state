@@ -22,6 +22,10 @@ abstract class View<VM extends BaseViewModel> extends StatefulWidget {
 
   /// 如果你希望在该View创建的同时,注册VM, 请覆写本方法
   @protected
+  VM registerVmInstance() => registerVM;
+
+  @Deprecated('Please use registerVmInstance()')
+  @protected
   VM get registerVM => null;
 
   /// 如果你希望在View创建的时候, 做一些初始化工作, 例如初始化Model, 请覆写本方法
@@ -53,8 +57,8 @@ class _ViewState<VM extends BaseViewModel, V extends View<VM>>
   void initState() {
     super.initState();
     // 注册ViewModel
-    if (widget.registerVM != null && !_g.isRegistered<VM>())
-      _g.registerSingleton<VM>(widget.registerVM);
+    if (widget.registerVmInstance() != null && !_g.isRegistered<VM>())
+      _g.registerSingleton<VM>(widget.registerVmInstance());
     // 添加监听
     // todo 或许可以在这里根据状态值选择性拦截刷新命令
     _g<VM>().addListener(update);

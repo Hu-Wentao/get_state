@@ -63,11 +63,6 @@ abstract class ViewModel<M> extends BaseViewModel {
     vmState = VmState.idle;
   }
 
-  vmRefresh([void Function() fn, bool setIdle = true]) {
-    fn?.call();
-    setIdle ? vmSetIdleAndNotify : notifyListeners();
-  }
-
   /// 相当于 State<>类中的 dispose();方法
   @protected
   void onDispose(View widget) {}
