@@ -7,15 +7,9 @@ part of '../abs.dart';
 ///
 /// 适用于一个或多个 [LiveData] / [LiveModel] 使用
 /// 数据刷新逻辑都转移到 [LiveData] / [LiveModel] 中
-abstract class BaseViewModel extends ChangeNotifier {
-  bool get hasListeners => super.hasListeners;
-
-  void get vmNotify => super.notifyListeners();
-
+abstract class BaseViewModel {
   /// 相当于 State<>类中的 dispose();方法
   @protected
-  void onDispose(View widget) {}
-
-  @protected
-  void vmDispose() {}
+  @mustCallSuper
+  void onDispose(Widget widget) => null;
 }

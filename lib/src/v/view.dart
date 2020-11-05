@@ -3,14 +3,14 @@
 // Date  : 2020/7/14
 // Time  : 22:16
 
-part of 'abs.dart';
+part of '../abs.dart';
 
 ///-----------------------------------------------------------------------------
 ///
 ///
 /// 配合GetIt使用的基础View类
 /// 如果某View的 [_isRootView] == true,那么在它被销毁时, 将会释放对应的VM
-abstract class View<VM extends BaseViewModel> extends StatefulWidget {
+abstract class View<VM extends ViewModel> extends StatefulWidget {
   final bool _isRootView;
 
   View({Key key, bool isRoot: false})
@@ -22,11 +22,7 @@ abstract class View<VM extends BaseViewModel> extends StatefulWidget {
 
   /// 如果你希望在该View创建的同时,注册VM, 请覆写本方法
   @protected
-  VM registerVmInstance() => registerVM;
-
-  @Deprecated('Please use registerVmInstance()')
-  @protected
-  VM get registerVM => null;
+  registerVmInstance() => null;
 
   /// 如果你希望在View创建的时候, 做一些初始化工作, 例如初始化Model, 请覆写本方法
   /// ```dart
@@ -34,7 +30,8 @@ abstract class View<VM extends BaseViewModel> extends StatefulWidget {
   ///   vm.vmInitModel(BarModel());
   /// }
   /// ```
-  void onInitState(VM vm) {}
+  @mustCallSuper
+  void onInitState(VM vm, ) =>null;
 
   Widget build(BuildContext c, VM vm);
 
@@ -45,7 +42,7 @@ abstract class View<VM extends BaseViewModel> extends StatefulWidget {
 /// ViewSate
 /// [VM] View所绑定的ViewModel
 /// [V] ViewState所绑定的View
-class _ViewState<VM extends BaseViewModel, V extends View<VM>>
+class _ViewState<VM extends ViewModel, V extends View<VM>>
     extends State<V> {
   @override
   Widget build(BuildContext context) => widget.build(context, _g<VM>());
@@ -57,20 +54,21 @@ class _ViewState<VM extends BaseViewModel, V extends View<VM>>
   void initState() {
     super.initState();
     // 注册ViewModel
-    if (widget.registerVmInstance() != null && !_g.isRegistered<VM>())
-      _g.registerSingleton<VM>(widget.registerVmInstance());
+    if (!_g.isRegistered<VM>()) widget.registerVmInstance();
+
     // 添加监听
     // todo 或许可以在这里根据状态值选择性拦截刷新命令
-    _g<VM>().addListener(update);
     // 来自View的onInit()
     widget.onInitState(_g<VM>());
   }
 
   @override
   void dispose() {
-    _g<VM>().onDispose(widget);
-    _g<VM>().removeListener(update);
-    if (widget._isRootView) _g.unregister<VM>();
+//    _g<VM>().removeListener(update);
+    if (widget._isRootView) {
+      _g<VM>().onDispose(widget);
+      _g.unregister<VM>();
+    }
     super.dispose();
   }
 }

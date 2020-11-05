@@ -12,9 +12,11 @@ typedef Create<T> = Future<T> Function();
 /// 抽象ViewModel
 /// [M] :Model
 /// 建议 M extends Equatable
-/// 4.0.0 以后, ViewModel不再绑定某一个Model, 一个VM可以管理多个Model,
+/// 4.0.0 以后, 新增BaseViewModel, 不再绑定某一个Model, 一个BaseViewModel可以管理多个Model,
 ///   因此泛型[M] 不再有意义
-abstract class ViewModel<M> extends BaseViewModel {
+abstract class ViewModel<M> extends ChangeNotifier implements BaseViewModel {
+  void get vmNotify => super.notifyListeners();
+
   VmState vmState;
   M _m;
 
@@ -65,7 +67,7 @@ abstract class ViewModel<M> extends BaseViewModel {
 
   /// 相当于 State<>类中的 dispose();方法
   @protected
-  void onDispose(View widget) {}
+  void onDispose(Widget widget) {}
 
   @protected
   void vmDispose() {
